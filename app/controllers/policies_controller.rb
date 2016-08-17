@@ -25,6 +25,10 @@ class PoliciesController < ApplicationController
   # POST /policies.json
   def create
     @policy = Policy.new(policy_params)
+    #assigning user to policy if logged in
+    if user_signed_in?
+      @policy.user = current_user
+    end
 
     respond_to do |format|
       if @policy.save

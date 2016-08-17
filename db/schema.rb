@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160718201708) do
+ActiveRecord::Schema.define(version: 20160817152852) do
 
   create_table "blogs", force: :cascade do |t|
     t.string   "Title"
@@ -50,7 +50,10 @@ ActiveRecord::Schema.define(version: 20160718201708) do
     t.text     "Medicalinfo"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.integer  "user_id"
   end
+
+  add_index "policies", ["user_id"], name: "index_policies_on_user_id"
 
   create_table "posts", force: :cascade do |t|
     t.string   "Title"
