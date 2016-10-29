@@ -1,114 +1,38 @@
 <div class="top">
-<div class="top-bar">
-  <div class="top-bar-title"><img src="http://i1167.photobucket.com/albums/q627/spawnreed/leg_zpsdn4xuf6y.png" class="logo"height="5" alt="" /></div>
-  <div>
-    <div class="top-bar-left"></div>
-    <div class="top-bar-right">
-  </div>
-  </div>
-</div>
-</div>
-<body class='devise'>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
-  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
-
-  <div class='body'>
-  <div class="sign-up-box">
-  <div class="row">
-    <div class="twelve columns center">
-      <h5 class='h5'>Let's Begin!</h5>
-      <form>
-        <!-- <input type="text" name="username" placeholder="Username"> -->
-        <%= f.email_field :email, autofocus: true, placeholder: 'Email Address' %>
-        <br>
-        <%= f.password_field :password, autocomplete: "off", placeholder: 'Password' %>
-        <br>
-        <!-- <input type="text" name="password" placeholder="Confirm Password"> -->
-        <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: 'Confirm Password' %>
-
-         <p>Already have an account? <%= link_to "Sign in", new_user_session_path %> </p>
-
-        <div class="button-position">
-            <!-- <button class="button-signup">Sign in</button> -->
-            <div class="actions">
-              <%= f.submit "Sign up", class:'button-signup'  %>
-            </div>
-        </div>
-      </form>
+  <div class="top-bar">
+    <div class="top-bar-title"><img src="http://i1167.photobucket.com/albums/q627/spawnreed/leg_zpsdn4xuf6y.png" class="logo"height="5" alt="" /></div>
+    <div>
+      <div class="top-bar-left"></div>
+      <div class="top-bar-right">
+      </div>
     </div>
   </div>
-  </div>
-  </div>
-
-
-
-
-
-<!-- <div class="login">
-  <h2 class="active"> sign up </h2>
-
-  <h2 class="nonactive"> sign in </h2>
-  <form>
-
-
-    <%= f.email_field :email, autofocus: true, class: 'text', placeholder: 'Email Address' %>
-     <span class="span">username</span>
-
-    <br>
-
-
-
-    <%= f.password_field :password, autocomplete: "off", class: 'text', placeholder: 'Password' %>
-     <span class="span">password</span>
-
-    <br>
-
-    <%= f.password_field :password_confirmation, class: 'text', placeholder: 'Confirm Password' %>
-    <span class="span">password</span>
-
-    <br>
-
-     <input type="checkbox" id="checkbox-1-1" class="custom-checkbox" />
-    <label for="checkbox-1-1" class="check">Keep me Signed in</label>
-
-    <%= f.submit "Sign up", class:'signin' %>
-
-     <button class="signin">
-      Sign In
-    </button>
-
-
-    <hr>
-
-    <a href="#", class="forgot">Forgot Password?</a>
-  </form>
-
-</div> -->
-
-<!--  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div> -->
-<% end %>
-
-<!-- <%= render "devise/shared/links" %> -->
+</div>
+<body>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= devise_error_messages! %>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+    <div class='body'>
+      <div class="sign-up-box">
+        <div class="row">
+          <div class="twelve columns center">
+            <h5 class='h5'>Let's Begin!</h5>
+            <form>
+              <%= f.email_field :email, autofocus: true, placeholder: 'Email Address' %>
+              <br>
+              <%= f.password_field :password, autocomplete: "off", placeholder: 'Password' %>
+              <br>
+              <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: 'Confirm Password' %>
+              <p>Already have an account? <%= link_to "Sign in", new_user_session_path %> </p>
+              <div class="button-position">
+                <div class="actions">
+                  <%= f.submit "Sign up", class:'button-signup'  %>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%end%>
 </body>

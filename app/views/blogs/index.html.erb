@@ -1,12 +1,12 @@
 <div class="top">
-<div class="top-bar">
-  <div class="top-bar-title"><img src="http://i1167.photobucket.com/albums/q627/spawnreed/leg_zpsdn4xuf6y.png" class="logo"height="5" alt="" /></div>
-  <div>
-    <div class="top-bar-left"></div>
-    <div class="top-bar-right">
+  <div class="top-bar">
+    <div class="top-bar-title"><img src="http://i1167.photobucket.com/albums/q627/spawnreed/leg_zpsdn4xuf6y.png" class="logo"height="5" alt="" /></div>
+    <div>
+      <div class="top-bar-left"></div>
+      <div class="top-bar-right">
+      </div>
+    </div>
   </div>
-  </div>
-</div>
 </div>
 
 
@@ -17,50 +17,42 @@
 
 <div class="blogtitle">
   <div class="newsletter">
-  <p class="title">
-    Newsletter Name
-  </p>
+    <p class="title">
+      Newsletter Name
+    </p>
+  </div>
 </div>
-</div>
-
-
-
-
 
 <div class="willblog">
-<% @blogs.each do |blog| %>
+  <% @blogs.each do |blog| %>
 
-<!--CARD CODE-->
+      <!--CARD CODE-->
+      <div class="blog-card">
+        <div class="photo photo1"></div>
+        <ul class="details">
+          <li class="author"><a href="#">Will Smith</a></li>
+          <li class="date">Aug. 24, 2015</li>
+          <!-- <li class="tags">
+              <ul>
+                  <li><a href="#">Learn</a></li>
+                  <li><a href="#">Code</a></li>
+                  <li><a href="#">HTML</a></li>
+                  <li><a href="#">CSS</a></li>
+              </ul>
+          </li> -->
+        </ul>
+        <div class="description">
+          <h5><%= blog.Title %></h5>
+          <h6 class="open">Your Legacy</h6>
+          <p class="summary"><%= blog.Text %></p>
+          <!-- <a href="#">Read More</a> -->
+        </div>
+      </div>
+      </div>
+      <!--END CARD CODE-->
+      </body>
 
-<div class="blog-card">
-	<div class="photo photo1"></div>
-	<ul class="details">
-		<li class="author"><a href="#">Will Smith</a></li>
-		<li class="date">Aug. 24, 2015</li>
-		<!-- <li class="tags">
-			<ul>
-				<li><a href="#">Learn</a></li>
-				<li><a href="#">Code</a></li>
-				<li><a href="#">HTML</a></li>
-				<li><a href="#">CSS</a></li>
-			</ul>
-		</li> -->
-	</ul>
-	<div class="description">
-		<h5><%= blog.Title %></h5>
-		<h6 class="open">Your Legacy</h6>
-		<p class="summary"><%= blog.Text %></p>
-		<!-- <a href="#">Read More</a> -->
-	</div>
-</div>
-</div>
-<!--END CARD CODE-->
-
-
-
-     </body>
-
-<!-- <h1>Listing Blogs</h1>
+      <!-- <h1>Listing Blogs</h1>
 
 <table>
   <thead>
@@ -80,9 +72,9 @@
         <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
         <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr> -->
-    <% end %>
-    <!-- <%= link_to 'New Blog', new_blog_path %> -->
+  <% end %>
+  <!-- <%= link_to 'New Blog', new_blog_path %> -->
   </tbody>
-</table>
+  </table>
 
-<br>
+  <br>

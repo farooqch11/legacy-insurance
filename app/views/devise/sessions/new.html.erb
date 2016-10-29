@@ -1,103 +1,38 @@
 <div class="top">
-<div class="top-bar">
-  <div class="top-bar-title"><img src="http://i1167.photobucket.com/albums/q627/spawnreed/leg_zpsdn4xuf6y.png" class="logo"height="5" alt="" /></div>
-  <div>
-    <div class="top-bar-left"></div>
-    <div class="top-bar-right">
-  </div>
+  <div class="top-bar">
+    <div class="top-bar-title"><img src="http://i1167.photobucket.com/albums/q627/spawnreed/leg_zpsdn4xuf6y.png" class="logo"height="5" alt="" /></div>
+    <div>
+      <div class="top-bar-left"></div>
+      <div class="top-bar-right">
+      </div>
+    </div>
   </div>
 </div>
-</div>
-
-
 <body class='devise'>
-
-
-
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-<link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
-
-  <div class='body'>
-  <div class="sign-up-box">
-  <div class="row">
-    <div class="twelve columns center">
-      <h5 class='h5'>Welcome Back!</h5>
-      <form>
-        <!-- <input type="text" name="username" placeholder="Username"> -->
-        <%= f.email_field :email, autofocus: true, placeholder: 'Email Address' %>
-        <br>
-        <%= f.password_field :password, autocomplete: "off", placeholder: 'Password' %>
-        <br>
-      <!--  <input type="text" name="password" placeholder="Password"> -->
-        <p>Don't have an account? <%= link_to "Sign up", new_user_registration_path %></p>
-        <p>Forgot Password? <%= link_to "Forgot Password", edit_user_registration_path %></p>
-      <div class="button-position">
-             <button class="button-signup">Sign in</button>
-            <div class="actions">
-              <%= f.submit "Sign in", class:'button-signup'  %>
-            </div>
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
+    <div class='body'>
+      <div class="sign-up-box">
+        <div class="row">
+          <div class="twelve columns center">
+            <h5 class='h5'>Welcome Back!</h5>
+            <form>
+              <%= f.email_field :email, autofocus: true, placeholder: 'Email Address' %>
+              <br>
+              <%= f.password_field :password, autocomplete: "off", placeholder: 'Password' %>
+              <br>
+              <p>Don't have an account? <%= link_to "Sign up", new_user_registration_path %></p>
+              <p>Forgot Password? <%= link_to "Forgot Password", edit_user_registration_path %></p>
+              <div class="button-position">
+                <button class="button-signup">Sign in</button>
+                <div class="actions">
+                  <%= f.submit "Sign in", class:'button-signup'  %>
+                </div>
+              </div>
+            </form>
+          </div>
         </div>
-      </form>
+      </div>
     </div>
-  </div>
-</div>
-</div>
-
-
-
-
-<!-- <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'> -->
-
-<!-- <div class="login">
-<h2 class="nonactive"> sign up </h2>
-<h2 class="active"> sign in </h2>
-<form>
-  <%= f.email_field :email, autofocus: true, class: 'text', placeholder: 'Email Address' %>
-   <span class="span">username</span>
-  <br>
-  <%= f.password_field :password, autocomplete: "off", class: 'text', placeholder: 'Password' %>
-  <span class="span">password</span>
-  <br>
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me, class: 'custom-checkbox' %>
-      <%= f.label :remember_me, class:'check' %>
-    </div>
-  <% end -%>
-  <input type="checkbox" id="checkbox-1-1" class="custom-checkbox" />
-  <label for="checkbox-1-1" class="check">Keep me Signed in</label>
-  <div class="actions">
-    <%= f.submit "Log in", class: 'signin' %>
-  </div>
-  <<button class="signin">
-    Sign In
-  </button>
- <hr>
-  <a href="#", class="forgot">Forgot Password?</a>
-<div class='forgot'> <%= render "devise/shared/links" %> </div>
-</form>
-</div>-->
-
-  <!--<div class="field">
-     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end -%>
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div> -->
-
 <% end %>
-
-
-
 </body>

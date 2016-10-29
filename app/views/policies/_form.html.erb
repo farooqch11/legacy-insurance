@@ -1,199 +1,191 @@
 <%= form_for(@policy) do |f| %>
-  <% if @policy.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@policy.errors.count, "error") %> prohibited this policy from being saved:</h2>
+    <% if @policy.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@policy.errors.count, "error") %> prohibited this policy from being saved:</h2>
 
-      <ul>
-      <% @policy.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-
-  <p class='newpo'>
-    Hey there!, Completing this Policy is the first step to a fruitful and refreshing legacy.
-  </p>
-
-
-
-  <form class='form'>
-    <!-- <input id="input-1" type="text" placeholder="John Doe" class='input'  required autofocus /> -->
-    <%= f.text_field :Name, Placeholder:'What is your name?', id:'input-1', class:'input' %>
+          <ul>
+            <% @policy.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+    <p class='newpo'>
+      Hey there!, Completing this Policy is the first step to a fruitful and refreshing legacy.
+    </p>
+    <form class='form'>
+      <!-- <input id="input-1" type="text" placeholder="John Doe" class='input'  required autofocus /> -->
+      <%= f.text_field :Name, Placeholder:'What is your name?', id:'input-1', class:'input' %>
       <label for="input-1" class='label1'>
-      <span class="label-text">Full Name</span>
-       <span class="nav-dot"></span>
-      <div class="signup-button-trigger">Sign Up</div>
-    </label>
-    <!-- <input id="input-2" type="text" placeholder="john" class='input'  required /> -->
-    <%= f.text_field :age, Placeholder:'How old are you?', id:'input-2', class:'input' %>
-    <label for="input-2">
-      <span class="label-text">Age</span>
-       <span class="nav-dot"></span>
-    </label>
-    <!-- <input id="input-3" type="text" placeholder="email@address.com" class='input'  required /> -->
-    <%= f.text_field :birthday, Placeholder:'What is your birthday?', id:'input-3', class:'input' %>
-    <label for="input-3">
-      <span class="label-text">Birthday</span>
-       <span class="nav-dot"></span>
-    </label>
-    <!-- <input id="input-4" type="text" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;" class='input'  required /> -->
-    <%= f.text_field :address, Placeholder:'What is your address?', id:'input-4', class:'input' %>
-    <label for="input-4">
-      <span class="label-text">Address</span>
-       <span class="nav-dot"></span>
-    </label>
-    <!-- <input id="input-5" type="text" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;" class='input' required /> -->
-    <%= f.text_field :StateofBirth, Placeholder:'What state were you born in?', id:'input-5', class:'input' %>
-    <label for="input-5">
-      <span class="label-text">State of Birth</span>
-       <span class="nav-dot"></span>
-    </label>
+        <span class="label-text">Full Name</span>
+        <span class="nav-dot"></span>
+        <div class="signup-button-trigger">Sign Up</div>
+      </label>
+      <!-- <input id="input-2" type="text" placeholder="john" class='input'  required /> -->
+      <%= f.text_field :age, Placeholder:'How old are you?', id:'input-2', class:'input' %>
+      <label for="input-2">
+        <span class="label-text">Age</span>
+        <span class="nav-dot"></span>
+      </label>
+      <!-- <input id="input-3" type="text" placeholder="email@address.com" class='input'  required /> -->
+      <%= f.text_field :birthday, Placeholder:'What is your birthday?', id:'input-3', class:'input' %>
+      <label for="input-3">
+        <span class="label-text">Birthday</span>
+        <span class="nav-dot"></span>
+      </label>
+      <!-- <input id="input-4" type="text" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;" class='input'  required /> -->
+      <%= f.text_field :address, Placeholder:'What is your address?', id:'input-4', class:'input' %>
+      <label for="input-4">
+        <span class="label-text">Address</span>
+        <span class="nav-dot"></span>
+      </label>
+      <!-- <input id="input-5" type="text" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;" class='input' required /> -->
+      <%= f.text_field :StateofBirth, Placeholder:'What state were you born in?', id:'input-5', class:'input' %>
+      <label for="input-5">
+        <span class="label-text">State of Birth</span>
+        <span class="nav-dot"></span>
+      </label>
 
-    <!-- <input id="input-5" type="text" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;" class='input' required /> -->
-    <%= f.text_field :CityofBirth, Placeholder:'What city were you born in?', id:'input-6', class:'input' %>
-    <label for="input-6">
-      <span class="label-text">City of Birth</span>
-       <span class="nav-dot"></span>
-    </label>
-    <!-- <input id="input-5" type="text" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;" class='input' required /> -->
-    <%= f.text_field :height, Placeholder:'How tall are you?', id:'input-7', class:'input' %>
-    <label for="input-7">
-      <span class="label-text">Height</span>
-       <span class="nav-dot"></span>
-    </label>
-    <!-- <input id="input-5" type="text" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;" class='input' required /> -->
-    <%= f.text_field :weight, Placeholder:'How much do you weigh?', id:'input-8', class:'input' %>
-    <label for="input-8">
-      <span class="label-text">Weight</span>
-       <span class="nav-dot"></span>
-    </label>
-    <!-- <input id="input-5" type="text" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;" class='input' required /> -->
-    <%= f.text_field :Licensenumber, Placeholder:'What is your License Number', id:'input-9', class:'input' %>
-    <label for="input-9">
-      <span class="label-text">Drivers License Number</span>
-       <span class="nav-dot"></span>
-    </label>
-    <!-- <input id="input-5" type="text" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;" class='input' required /> -->
-    <%= f.text_field :State, Placeholder:'What state did you recieve your license in?', id:'input-10', class:'input' %>
-    <label for="input-10">
-      <span class="label-text">State of Birth</span>
-       <span class="nav-dot"></span>
-    </label>
-    <!-- <input id="input-5" type="text" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;" class='input' required /> -->
-    <%= f.text_field :SSN, Placeholder:'What is your social securty number?', id:'input-11', class:'input' %>
-    <label for="input-11">
-      <span class="label-text">Social Security</span>
-       <span class="nav-dot"></span>
-    </label>
-    <!-- <input id="input-5" type="text" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;" class='input' required /> -->
-    <%= f.text_field :Salary, Placeholder:'What is your Salary?', id:'input-12', class:'input' %>
-    <label for="input-12">
-      <span class="label-text">Salary</span>
-       <span class="nav-dot"></span>
-    </label>
-    <!-- <input id="input-5" type="text" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;" class='input' required /> -->
-    <%= f.text_field :Agency, Placeholder:'What agency do you work for?', id:'input-13', class:'input' %>
-    <label for="input-13">
-      <span class="label-text">Agency</span>
-       <span class="nav-dot"></span>
-    </label>
-    <!-- <input id="input-5" type="text" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;" class='input' required /> -->
-    <%= f.text_field :Job, Placeholder:'What is your current job title?', id:'input-14', class:'input' %>
-    <label for="input-14">
-      <span class="label-text">Job Title</span>
-       <span class="nav-dot"></span>
-    </label>
-    <!-- <input id="input-5" type="text" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;" class='input' required /> -->
-    <%= f.text_field :Doh, Placeholder:'What was the date you hired at your Agency?', id:'input-15', class:'input' %>
-    <label for="input-15">
-      <span class="label-text">Date Hired</span>
-       <span class="nav-dot"></span>
-    </label>
-    <!-- <input id="input-5" type="text" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;" class='input' required /> -->
-    <%= f.text_field :Benefactors, Placeholder:'Tell us who you would like to list as your Beneficiaries. (separate by commas)', id:'input-16', class:'input' %>
-    <label for="input-16">
-      <span class="label-text">Beneficiary</span>
-       <span class="nav-dot"></span>
-    </label>
-    <!-- <input id="input-5" type="text" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;" class='input' required /> -->
-    <%= f.text_field :DateofBirth, Placeholder:'List your beneficiaries birthdays here. (separate by commas) ', id:'input-17', class:'input' %>
-    <label for="input-17">
-      <span class="label-text">Beneficiary Date of Birth</span>
-       <span class="nav-dot"></span>
-    </label>
-    <!-- <input id="input-5" type="text" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;" class='input' required /> -->
-    <%= f.text_field :Relationship, Placeholder:'List your association with your beneficiaries. (separate by commas)', id:'input-18', class:'input' %>
-    <label for="input-18">
-      <span class="label-text">Beneficiary State of Birth</span>
-       <span class="nav-dot"></span>
-    </label>
-    <!-- <input id="input-5" type="text" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;" class='input' required /> -->
-    <%= f.text_field :AgeofFather, Placeholder:'How is your father?', id:'input-19', class:'input' %>
-    <label for="input-19">
-      <span class="label-text">Age of Father</span>
-       <span class="nav-dot"></span>
-    </label>
-    <!-- <input id="input-5" type="text" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;" class='input' required /> -->
-    <%= f.text_field :AgeofMother, Placeholder:'How old is your mother?', id:'input-20', class:'input' %>
-    <label for="input-20">
-      <span class="label-text">Age of Mother</span>
-       <span class="nav-dot"></span>
-    </label>
-    <%= f.text_field :Living, Placeholder:'Are your parents living?', id:'input-21', class:'input' %>
-    <label for="input-21 ">
-      <span class="label-text">Are Your Parents Living?</span>
-       <span class="nav-dot"></span>
-    </label>
-    <%= f.text_field :AgeofFatherDeath, Placeholder:'How old was your father at time of death?', id:'input-22', class:'input' %>
-    <label for="input-22">
-      <span class="label-text">Age of Father at Death</span>
-       <span class="nav-dot"></span>
-    </label>
-    <%= f.text_field :AgeofMotherDeath, Placeholder:'How old was your mother at time of death?', id:'input-23', class:'input' %>
-    <label for="input-23">
-      <span class="label-text">Age of Mother at Death</span>
-       <span class="nav-dot"></span>
-    </label>
-    <%= f.text_field :cause, Placeholder:'List cause of parents death', id:'input-24', class:'input' %>
-    <label for="input-24">
-      <span class="label-text">What Was the Cause of Your Parents Death?</span>
-       <span class="nav-dot"></span>
-    </label>
-    <%= f.text_field :Siblings, Placeholder:"List sibling's names. (separate by commas)", id:'input-25', class:'input' %>
-    <label for="input-25">
-      <span class="label-text">What are your Sibling's names</span>
-       <span class="nav-dot"></span>
-    </label>
-    <%= f.text_field :Married, Placeholder:'Are you married?', id:'input-26', class:'input' %>
-    <label for="input-26">
-      <span class="label-text">Are you Married?</span>
-       <span class="nav-dot"></span>
-    </label>
-    <%= f.text_area :Medicalinfo, Placeholder:'Tell us about any medical concerns', id:'input-27', class:'input' %>
-    <label for="input-27">
-      <span class="label-text">Tell us about your Medical History</span>
-       <span class="nav-dot"></span>
-    </label>
-    <!-- <div id="input-31", class='input'> <%= f.submit %> </div>
+      <!-- <input id="input-5" type="text" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;" class='input' required /> -->
+      <%= f.text_field :CityofBirth, Placeholder:'What city were you born in?', id:'input-6', class:'input' %>
+      <label for="input-6">
+        <span class="label-text">City of Birth</span>
+        <span class="nav-dot"></span>
+      </label>
+      <!-- <input id="input-5" type="text" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;" class='input' required /> -->
+      <%= f.text_field :height, Placeholder:'How tall are you?', id:'input-7', class:'input' %>
+      <label for="input-7">
+        <span class="label-text">Height</span>
+        <span class="nav-dot"></span>
+      </label>
+      <!-- <input id="input-5" type="text" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;" class='input' required /> -->
+      <%= f.text_field :weight, Placeholder:'How much do you weigh?', id:'input-8', class:'input' %>
+      <label for="input-8">
+        <span class="label-text">Weight</span>
+        <span class="nav-dot"></span>
+      </label>
+      <!-- <input id="input-5" type="text" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;" class='input' required /> -->
+      <%= f.text_field :Licensenumber, Placeholder:'What is your License Number', id:'input-9', class:'input' %>
+      <label for="input-9">
+        <span class="label-text">Drivers License Number</span>
+        <span class="nav-dot"></span>
+      </label>
+      <!-- <input id="input-5" type="text" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;" class='input' required /> -->
+      <%= f.text_field :State, Placeholder:'What state did you recieve your license in?', id:'input-10', class:'input' %>
+      <label for="input-10">
+        <span class="label-text">State of Birth</span>
+        <span class="nav-dot"></span>
+      </label>
+      <!-- <input id="input-5" type="text" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;" class='input' required /> -->
+      <%= f.text_field :SSN, Placeholder:'What is your social securty number?', id:'input-11', class:'input' %>
+      <label for="input-11">
+        <span class="label-text">Social Security</span>
+        <span class="nav-dot"></span>
+      </label>
+      <!-- <input id="input-5" type="text" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;" class='input' required /> -->
+      <%= f.text_field :Salary, Placeholder:'What is your Salary?', id:'input-12', class:'input' %>
+      <label for="input-12">
+        <span class="label-text">Salary</span>
+        <span class="nav-dot"></span>
+      </label>
+      <!-- <input id="input-5" type="text" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;" class='input' required /> -->
+      <%= f.text_field :Agency, Placeholder:'What agency do you work for?', id:'input-13', class:'input' %>
+      <label for="input-13">
+        <span class="label-text">Agency</span>
+        <span class="nav-dot"></span>
+      </label>
+      <!-- <input id="input-5" type="text" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;" class='input' required /> -->
+      <%= f.text_field :Job, Placeholder:'What is your current job title?', id:'input-14', class:'input' %>
+      <label for="input-14">
+        <span class="label-text">Job Title</span>
+        <span class="nav-dot"></span>
+      </label>
+      <!-- <input id="input-5" type="text" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;" class='input' required /> -->
+      <%= f.text_field :Doh, Placeholder:'What was the date you hired at your Agency?', id:'input-15', class:'input' %>
+      <label for="input-15">
+        <span class="label-text">Date Hired</span>
+        <span class="nav-dot"></span>
+      </label>
+      <!-- <input id="input-5" type="text" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;" class='input' required /> -->
+      <%= f.text_field :Benefactors, Placeholder:'Tell us who you would like to list as your Beneficiaries. (separate by commas)', id:'input-16', class:'input' %>
+      <label for="input-16">
+        <span class="label-text">Beneficiary</span>
+        <span class="nav-dot"></span>
+      </label>
+      <!-- <input id="input-5" type="text" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;" class='input' required /> -->
+      <%= f.text_field :DateofBirth, Placeholder:'List your beneficiaries birthdays here. (separate by commas) ', id:'input-17', class:'input' %>
+      <label for="input-17">
+        <span class="label-text">Beneficiary Date of Birth</span>
+        <span class="nav-dot"></span>
+      </label>
+      <!-- <input id="input-5" type="text" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;" class='input' required /> -->
+      <%= f.text_field :Relationship, Placeholder:'List your association with your beneficiaries. (separate by commas)', id:'input-18', class:'input' %>
+      <label for="input-18">
+        <span class="label-text">Beneficiary State of Birth</span>
+        <span class="nav-dot"></span>
+      </label>
+      <!-- <input id="input-5" type="text" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;" class='input' required /> -->
+      <%= f.text_field :AgeofFather, Placeholder:'How is your father?', id:'input-19', class:'input' %>
+      <label for="input-19">
+        <span class="label-text">Age of Father</span>
+        <span class="nav-dot"></span>
+      </label>
+      <!-- <input id="input-5" type="text" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;" class='input' required /> -->
+      <%= f.text_field :AgeofMother, Placeholder:'How old is your mother?', id:'input-20', class:'input' %>
+      <label for="input-20">
+        <span class="label-text">Age of Mother</span>
+        <span class="nav-dot"></span>
+      </label>
+      <%= f.text_field :Living, Placeholder:'Are your parents living?', id:'input-21', class:'input' %>
+      <label for="input-21 ">
+        <span class="label-text">Are Your Parents Living?</span>
+        <span class="nav-dot"></span>
+      </label>
+      <%= f.text_field :AgeofFatherDeath, Placeholder:'How old was your father at time of death?', id:'input-22', class:'input' %>
+      <label for="input-22">
+        <span class="label-text">Age of Father at Death</span>
+        <span class="nav-dot"></span>
+      </label>
+      <%= f.text_field :AgeofMotherDeath, Placeholder:'How old was your mother at time of death?', id:'input-23', class:'input' %>
+      <label for="input-23">
+        <span class="label-text">Age of Mother at Death</span>
+        <span class="nav-dot"></span>
+      </label>
+      <%= f.text_field :cause, Placeholder:'List cause of parents death', id:'input-24', class:'input' %>
+      <label for="input-24">
+        <span class="label-text">What Was the Cause of Your Parents Death?</span>
+        <span class="nav-dot"></span>
+      </label>
+      <%= f.text_field :Siblings, Placeholder:"List sibling's names. (separate by commas)", id:'input-25', class:'input' %>
+      <label for="input-25">
+        <span class="label-text">What are your Sibling's names</span>
+        <span class="nav-dot"></span>
+      </label>
+      <%= f.text_field :Married, Placeholder:'Are you married?', id:'input-26', class:'input' %>
+      <label for="input-26">
+        <span class="label-text">Are you Married?</span>
+        <span class="nav-dot"></span>
+      </label>
+      <%= f.text_area :Medicalinfo, Placeholder:'Tell us about any medical concerns', id:'input-27', class:'input' %>
+      <label for="input-27">
+        <span class="label-text">Tell us about your Medical History</span>
+        <span class="nav-dot"></span>
+      </label>
+      <!-- <div id="input-31", class='input'> <%= f.submit %> </div>
     <label for="input-30">
       <span class="label-text">State of Birth</span>
 
     </label> -->
+      <button type="submit" class='signinn'>Create Your Account</button>
+      <p class="tip">Press Tab to Continue</p>
+      <div class="signup-button">Start Your Policy</div>
 
-
-
-    <button type="submit" class='signinn'>Create Your Account</button>
-    <p class="tip">Press Tab to Continue</p>
-    <div class="signup-button">Start Your Policy</div>
-
-  </form>
+    </form>
 
     <hr class='looks'>
 
 
-  <!-- <div class="field">
+    <!-- <div class="field">
     <%= f.label :Name %><br>
     <%= f.text_field :Name %>
   </div>

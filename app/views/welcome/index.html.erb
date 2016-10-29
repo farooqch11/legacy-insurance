@@ -1,27 +1,29 @@
 <div class="top-bar">
-  <div class="top-bar-title"><img src="http://i1167.photobucket.com/albums/q627/spawnreed/leg_zpsdn4xuf6y.png" class="logo"height="5" alt="" /></div>
+  <div class="top-bar-title">
+    <img src="http://i1167.photobucket.com/albums/q627/spawnreed/leg_zpsdn4xuf6y.png" class="logo" height="5" alt=""/>
+  </div>
   <div>
     <div class="top-bar-left"></div>
     <div class="top-bar-right">
       <ul class="menu">
-      <li>
-        <% if user_signed_in? %>
-        <p class='view'>
-          View Your Policy
-        </p>
-            <!-- Signed in as <%= current_user.email %>. -->
-        <!--<a href="#" class="signinn">Sign in</a>-->
-        <% else %>
-            <%= link_to "Sign in", new_user_session_path, class: 'signinn' %>
-      </li>
-      <li>
-        <!--<button type="button" class="button">Search</button>-->
-        <%= link_to "Join", new_user_registration_path, class:'button' %>
+        <li>
+          <% if user_signed_in? %>
+              <p class='view'>
+                View Your Policy
+              </p>
+              <!-- Signed in as <%= current_user.email %>. -->
+              <!--<a href="#" class="signinn">Sign in</a>-->
+          <% else %>
+              <%= link_to "Sign in", new_user_session_path, class: 'signinn' %>
+              </li>
+              <li>
+                <!--<button type="button" class="button">Search</button>-->
+                <%= link_to "Join", new_user_registration_path, class: 'button' %>
 
-        <%end%>
-      </li>
-    </ul>
-  </div>
+          <% end %>
+          </li>
+          </ul>
+    </div>
   </div>
 </div>
 
@@ -29,13 +31,18 @@
 
 <div class="fold">
   <div class="caption">
-  <center><h1 class="opaque">LEGACY</h1>
-    <h2 class="leg">LIFE INSURANCE</h2></center>
-      <h3 class="world"> A World of <span> Possibilities. </span></h3>
-        <p class="des">Life Insurance is an investment into the financial legacy of your family. <br> Having good policies in place is the difference between <br> extremely hard times in already troubling times <br> and ease in a troubled time. </p>
-        <div class="wrapper">
-          <div class="btn btn--border btn--primary btn--animated"><%= link_to "Plan Your Legacy", planner_index_path, class: "link" %></div>
-          <!-- <iframe width="600" height="730" src="https://widgets.lifehappens.org/planner/?cHJpbWFyeT1kMzJmMmYmc2Vjb25kYXJ5PWZmZmZmZiZ0ZXh0PWZmZmZmZiZoaWdobGlnaHQ9ZmZiYTAwJmxpZmU9aHR0cDovL3d3dy5saWZlaGFwcGVucy5vcmcvaW5zdXJhbmNlLW92ZXJ2aWV3L2xpZmUtaW5zdXJhbmNlLyZkaXNhYmlsaXR5PWh0dHA6Ly93d3cubGlmZWhhcHBlbnMub3JnL2luc3VyYW5jZS1vdmVydmlldy9kaXNhYmlsaXR5LWluc3VyYW5jZS8mbG9uZ3Rlcm09aHR0cDovL3d3dy5saWZlaGFwcGVucy5vcmcvaW5zdXJhbmNlLW92ZXJ2aWV3L2Rpc2FiaWxpdHktaW5zdXJhbmNlLyZ1c2VyPTE5ODkz" border="0" style="border: 0; min-width: 200px" scrolling="no"></iframe><script type="text/javascript">var href = window.location.href;(function(e,t){var r=e.amplitude||{};var n=t.createElement("script");n.type="text/javascript";n.async=true;n.src="https://d24n15hnbwhuhn.cloudfront.net/libs/amplitude-2.4.0-min.gz.js";var s=t.getElementsByTagName("script")[0];s.parentNode.insertBefore(n,s);r._q=[];function a(e){r[e]=function(){r._q.push([e].concat(Array.prototype.slice.call(arguments,0)))}}var i=["init","logEvent","logRevenue","setUserId","setUserProperties","setOptOut","setVersionName","setDomain","setDeviceId","setGlobalUserProperties"];for(var o=0;o<i.length;o++){a(i[o])}e.amplitude=r})(window,document);amplitude.init("6e0717f019b256fe8cb49ce3b8e25601");amplitude.logEvent("EMBED_PLANNER_WIDGET", {calling_website: href});</script> -->
-        </div>
-      </div>
+    <center><h1 class="opaque">LEGACY</h1>
+
+      <h2 class="leg">LIFE INSURANCE</h2></center>
+    <h3 class="world"> A World of <span> Possibilities. </span></h3>
+
+    <p class="des">Life Insurance is an investment into the financial legacy of your family. <br> Having good policies
+      in place is the difference between <br> extremely hard times in already troubling times <br> and ease in a
+      troubled time. </p>
+
+    <div class="wrapper">
+      <div class="btn btn--border btn--primary btn--animated"><%= link_to "Plan Your Legacy", planner_index_path, class: "link" %></div>
+      <!-- <iframe width="600" height="730" src="https://widgets.lifehappens.org/planner/?cHJpbWFyeT1kMzJmMmYmc2Vjb25kYXJ5PWZmZmZmZiZ0ZXh0PWZmZmZmZiZoaWdobGlnaHQ9ZmZiYTAwJmxpZmU9aHR0cDovL3d3dy5saWZlaGFwcGVucy5vcmcvaW5zdXJhbmNlLW92ZXJ2aWV3L2xpZmUtaW5zdXJhbmNlLyZkaXNhYmlsaXR5PWh0dHA6Ly93d3cubGlmZWhhcHBlbnMub3JnL2luc3VyYW5jZS1vdmVydmlldy9kaXNhYmlsaXR5LWluc3VyYW5jZS8mbG9uZ3Rlcm09aHR0cDovL3d3dy5saWZlaGFwcGVucy5vcmcvaW5zdXJhbmNlLW92ZXJ2aWV3L2Rpc2FiaWxpdHktaW5zdXJhbmNlLyZ1c2VyPTE5ODkz" border="0" style="border: 0; min-width: 200px" scrolling="no"></iframe><script type="text/javascript">var href = window.location.href;(function(e,t){var r=e.amplitude||{};var n=t.createElement("script");n.type="text/javascript";n.async=true;n.src="https://d24n15hnbwhuhn.cloudfront.net/libs/amplitude-2.4.0-min.gz.js";var s=t.getElementsByTagName("script")[0];s.parentNode.insertBefore(n,s);r._q=[];function a(e){r[e]=function(){r._q.push([e].concat(Array.prototype.slice.call(arguments,0)))}}var i=["init","logEvent","logRevenue","setUserId","setUserProperties","setOptOut","setVersionName","setDomain","setDeviceId","setGlobalUserProperties"];for(var o=0;o<i.length;o++){a(i[o])}e.amplitude=r})(window,document);amplitude.init("6e0717f019b256fe8cb49ce3b8e25601");amplitude.logEvent("EMBED_PLANNER_WIDGET", {calling_website: href});</script> -->
+    </div>
+  </div>
 </div>
