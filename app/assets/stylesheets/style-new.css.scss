@@ -1,0 +1,399 @@
+body {
+	background: #fff;
+	font-family: "Tahoma" !important;
+}
+.container-fluid {
+	max-width: 85%;
+}
+header {
+	background: #0d334e none repeat scroll 0 0;
+	height: 96px;
+	padding: 30px 0;
+}
+body.main-wrap {
+}
+.banner {
+	background: asset-url("banner.jpg") !important;
+	background-repeat:no-repeat;
+	background-size:cover; 
+	background: rgba(0, 0, 0, 0) asset-url("banner.jpg") !important repeat scroll 0 0 / cover;
+	color: #fff;
+	min-height: 400px;
+	padding-top: 108px;
+}
+.make-waves p {
+	font-size: 24px;
+	line-height: 30px;
+}
+.make-waves h3 {
+	font-size: 35px;
+	margin-bottom: 11px;
+}
+.make-waves {
+	padding-top: 40px;
+	background: #fff;
+}
+.make-waves {
+	color: #606060;
+}
+.make-waves .col-sm-12 {
+	max-width: 750px;
+}
+.banner h3 {
+	font-size: 20px;
+	margin-bottom: 10px;
+	margin-top: 19px;
+	line-height: 27px;
+}
+.plan.media-middle.text-center {
+	background: #e26e71 none repeat scroll 0 0;
+	border-radius: 21px;
+	color: #fff;
+	font-size: 18px;
+	margin: 10px auto auto;
+	padding: 12px 30px;
+	display: inline-block;
+}
+.banner h2 {
+	font-size: 47px;
+}
+.waves-section {
+	display: inline-block;
+	padding: 0;
+	width: 100%;
+	margin-top: 10px;
+}
+.waves-section > img {
+	width: 100%;
+}
+.protect-your-family {
+	background: #4b8cbb;
+	padding: 50px 0 80px;
+}
+.protect-your-family p {
+	font-size: 24px;
+	color: #fff;
+	line-height: 30px;
+}
+.protect-your-family h3 {
+	color: #fff;
+	font-size: 35px;
+	margin-bottom: 35px;
+	text-align: center;
+}
+.genetics {
+	background: #e26e71;
+	padding: 50px 0 80px;
+}
+.genetics p {
+	color: #fff;
+	font-size: 24px;
+	line-height: 34px;
+	margin-top: 23px;
+}
+.genetics h3 {
+	color: #fff;
+	font-size: 35px;
+	margin-bottom: 40px;
+	text-align: center;
+}
+.genetics .heart-icon {
+	margin: auto;
+	text-align: center;
+}
+.genetics .heart-icon > img {
+	margin: auto;
+	text-align: center;
+}
+.genetics .heart-icon > img {
+	max-width: 180px;
+}
+.genetics .female-banner {
+	max-width: 100px;
+	position: absolute;
+	right: -16px;
+	top: 141px;
+}
+.genetics .container-fluid .row {
+	position: relative;
+}
+.testimonials {
+	background: #fff;
+	padding: 50px 0 80px;
+}
+.testimonials b {
+	color: #7a7a7a;
+	font-size: 24px;
+	line-height: 34px;
+	margin-top: 23px;
+}
+.testimonials span {
+	color: #9fa0a2;
+	font-size: 20px;
+}
+.testimonials span {
+	display: block;
+	margin-top: 25px;
+}
+.get-started {
+	background-attachment: scroll;
+	background-clip: border-box;
+	background-color: #fff;
+	background-image: asset-url("welcome-bg.png") !important;
+	background-origin: padding-box;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: auto !important;
+	padding: 150px 0 220px;
+	margin-bottom: 100px;
+	margin-top: 20px;
+	text-align: center;
+}
+.get-started b {
+	color: #3b3b3b;
+	font-size: 30px;
+	line-height: 40px;
+	margin-top: 23px;
+}
+.get-started span {
+	color: #444444;
+	font-size: 20px;
+}
+.get-started span {
+	display: block;
+	margin-top: 25px;
+	text-align: center;
+}
+.get-started .get-started-btn {
+	background: #0d5e99 none repeat scroll 0 0;
+	color: #e5eef4;
+	display: inline-block;
+	float: none;
+	font-size: 18px;
+	margin: 25px auto auto;
+	padding: 15px 35px;
+}
+footer {
+	padding: 90px 0 90px;
+	background: #0d5e99;
+	text-align: center;
+}
+footer h4 {
+	color: #e7ecef;
+	font-size: 32px;
+	line-height: 40px;
+	margin-bottom: 20px;
+}
+footer .row a {
+	color: #e26e71;
+	display: block;
+	font-size: 18px;
+	line-height: 30px;
+}
+footer .row {
+	border-bottom: 1px solid #abc0cf;
+	margin-bottom: 15px;
+	padding-bottom: 65px;
+}
+/*  Basic Stylings*/
+
+p, h1, h2, h3, h4, ul {
+	padding: 0;
+	margin: 0;
+}
+h1, h2, h3, h4 {
+}
+.logo {
+	float: left;
+}
+.dropdown-menu-right.menu {
+	float: right;
+}
+.dropdown-menu-right.menu li {
+	float: right;
+	margin-right: 30px;
+}
+.dropdown-menu-right.menu li a {
+	color: #879aa8;
+	font-size: 20px;
+}
+.dropdown-menu-right.menu li.first {
+	background: #516d80 none repeat scroll 0 0;
+	border-radius: 25px;
+	margin-right: 0 !important;
+	padding: 10px 34px;
+	position: relative;
+	top: -10px;
+}
+.dropdown-menu-right.menu li.first a {
+	color: #fff;
+	display: inline-block;
+}
+.top-menu ul {
+	margin-bottom: 0;
+	float: right;
+}
+.top-menu ul li {
+	list-style: none;
+	float: left;
+	border-right: 1px solid #202f4f;
+}
+.top-menu ul li:first-child {
+	border-left: 1px solid #202f4f;
+}
+.top-menu ul li a {
+	display: block;
+	padding: 17px 21px;
+	color: #fff;
+	font-size: 18px;
+	text-decoration: none;
+	transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+}
+.top-menu ul li a i {
+	color: #4a90e2;
+	font-size: 23px;
+	position: relative;
+	float: left;
+	margin-right: 10px;
+}
+.top-menu ul li a:hover {
+	background: #344b7f;
+}
+
+
+/* Media Queries setting */
+
+@media (min-width: 1280px) {
+}
+@media (max-width: 1240px) {
+}
+@media (max-width: 1024px) {
+}
+ @media (max-width: 1180px) {
+}
+@media (max-width: 960px) {
+	footer h4 {
+  font-size: 26px;
+}
+}
+ @media (max-width: 767px) {
+.genetics p {
+  max-width: 80%;
+}
+footer h4 {
+  margin-top: 30px;
+}
+
+}
+ @media (max-width: 620px) {
+}
+ @media (max-width: 520px) {
+}
+@media (max-width: 480px) {
+	.logo {
+  float: left;
+  text-align: center;
+  width: 100%;
+}
+.dropdown-menu-right.menu {
+  float: right;
+  width: 100%;
+}
+.wrapper header ul {
+  text-align: center;
+}
+.dropdown-menu-right.menu li.first {
+  background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+  border-radius: 25px;
+  float: none;
+  margin-right: 0 !important;
+  padding: 10px 32px;
+  position: relative;
+  top: 0;
+}
+.dropdown-menu-right.menu li.first a {
+  color: #879aa8;
+}
+.dropdown-menu-right.menu li {
+  float: none;
+  list-style: outside none none;
+  margin-top: 11px;
+}
+.dropdown-menu-right.menu li a {
+  color: #879aa8;
+  font-size: 20px;
+}
+header {
+  background: #0d334e none repeat scroll 0 0;
+  height: auto;
+  padding: 30px 0;
+}
+.dropdown-menu-right.menu li {
+  float: none;
+  margin-right: 0;
+}
+.banner h2 {
+  font-size: 40px;
+}
+.banner h3 {
+  font-size: 18px;
+}
+.make-waves h3 {
+  font-size: 30px;
+  margin-bottom: 11px;
+}
+.make-waves p {
+  font-size: 20px;
+}
+.protect-your-family h3 {
+  font-size: 30px;
+}
+.protect-your-family p {
+  font-size: 20px;
+}
+.genetics h3 {
+  font-size: 30px;
+}
+.genetics p {
+  font-size: 20px;
+}	
+.get-started span {
+  margin-top: 20px;
+}
+footer h4 {
+  margin-top: 30px;
+}
+footer {
+  padding: 50px 0;
+}
+.protect-your-family h3 {
+  font-size: 30px;
+  line-height: 40px;
+}
+.genetics .female-banner {
+  display: block;
+  float: none;
+  margin: auto;
+  max-width: 100px;
+  position: relative;
+  right: 0;
+  text-align: center;
+  top: 10px;
+}
+.genetics p {
+  max-width: 100%;
+}
+.genetics {
+  padding: 50px 0 20px;
+}
+}
+@media (max-width: 440px) {
+}
+ @media (max-width: 420px) {
+}
+@media (max-width: 330px) {
+}
+@media (max-width: 330px) {
+}
