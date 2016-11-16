@@ -1,0 +1,42 @@
+<h1>New Legacy</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Back', legacies_path %>
+
+
+<script>
+
+    jQuery(document).ready(function($){
+
+
+        $('#request').on('click', function(){
+
+            var age = $("#age").val();
+            var relationship = $("#legacy_relationship_status").val();
+            var smoker ="false";
+            if ($("#smoker").is(':checked'))
+                smoker = "true";
+            //alert(age +" --"+relationship+"--"+smoker);
+            var data = { 'age': age, 'relationship_status': relationship, 'smoker': smoker };
+            $.ajax({
+                type: "POST",
+                url: '/calculate_amount',
+                data: data,
+                /**
+                 * Response from your controller
+                 */
+                success: function(response) {
+                    $("#age").val(age);
+
+                }
+
+            });
+
+            return false; // prevents normal behaviour
+        });
+    });
+
+
+
+</script>

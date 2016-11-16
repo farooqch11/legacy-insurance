@@ -11,13 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160817152852) do
+ActiveRecord::Schema.define(version: 20161111213201) do
 
   create_table "blogs", force: :cascade do |t|
     t.string   "Title"
     t.text     "Text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "legacies", force: :cascade do |t|
+    t.integer  "age"
+    t.integer  "relationship_status"
+    t.boolean  "smoker"
+    t.decimal  "coverage_amount"
+    t.decimal  "monthly_amount"
+    t.float    "insurance_years"
+    t.integer  "user_id"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
   end
 
   create_table "policies", force: :cascade do |t|

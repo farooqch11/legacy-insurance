@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @legacy.age %>
+</p>
+
+<p>
+  <strong>Realationship status:</strong>
+  <%= @legacy.relationship_status %>
+</p>
+
+<p>
+  <strong>Smoker:</strong>
+  <%= @legacy.smoker %>
+</p>
+
+<p>
+  <strong>Coverage amount:</strong>
+  <%= @legacy.coverage_amount %>
+</p>
+
+<p>
+  <strong>Insurance years:</strong>
+  <%= @legacy.insurance_years %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @legacy.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_legacy_path(@legacy) %> |
+<%= link_to 'Back', legacies_path %>
