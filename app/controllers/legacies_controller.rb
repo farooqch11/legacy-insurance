@@ -64,9 +64,19 @@ class LegaciesController < ApplicationController
 
   def calculate_amount
       @age= params[:age]
-      @relationship_status=  params[:relationship_status]
       @smoker= params[:smoker]
-      @calulated_amount= "13216546"
+      @relationship_status = params[:relationship_status]
+      @ammounts =Faceamount.where(:relationship_status => @relationship_status)
+      pricing = @ammounts.where("start_age <= ? and  end_age >= ?",@age,@age)
+
+      @calulated_amount= pricing.first.amount.to_f
+
+      if @calulated_amount <= 249000
+      elsif @calulated_amount <= 249000
+      elsif @calulated_amount <= 249000
+      elsif @calulated_amount <= 249000
+
+      end
       respond_to do |format|
         format.js {   }
       end

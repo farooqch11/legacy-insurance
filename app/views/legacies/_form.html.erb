@@ -1,46 +1,48 @@
-<%= form_for(@legacy ) do   |f| %>
-  <% if @legacy.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@legacy.errors.count, "error") %> prohibited this legacy from being saved:</h2>
+<div class="container-fluid">
+    <%= form_for(@legacy ) do   |f| %>
+      <% if @legacy.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@legacy.errors.count, "error") %> prohibited this legacy from being saved:</h2>
 
-      <ul>
-      <% @legacy.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+          <ul>
+          <% @legacy.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
 
-  <div class="field">
-    <%= f.label :age %><br>
-    <%= f.number_field :age, id: 'age' %>
-  </div>
-  <div class="field">
-    <%= f.label :relationship_status %><br>
-    <%= f.select(:relationship_status, Legacy.relationship_statuses.keys.map {|role| [role.titleize,role]}) %>
-  </div>
-  <div class="field">
-    <%= f.label :smoker %><br>
-    <%= f.check_box :smoker, id:'smoker' %>
-  </div>
-    <%= link_to 'request_quote', "", id: 'request' %>
-  <div class="field">
-    <%= f.label :coverage_amount %><br>
-    <%= f.text_field :coverage_amount %>
-  </div>
-    <div class="field">
-      <%= f.label :monthly_amount %><br>
-      <%= f.text_field :monthly_amount %>
-    </div>
-  <div class="field">
-    <%= f.label :insurance_years %><br>
-    <%= f.text_field :insurance_years %>
-  </div>
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.number_field :user_id %>
-  </div>
-  <a >
-    <%= f.submit %>
-  </a>
-<% end %>
+      <div class="field">
+        <%= f.label :age %><br>
+        <%= f.number_field :age, id: 'age' %>
+      </div>
+      <div class="field">
+        <%= f.label :relationship_status %><br>
+        <%= f.select(:relationship_status, Legacy.relationship_statuses.keys.map {|role| [role.titleize,role]}) %>
+      </div>
+      <div class="field">
+        <%= f.label :smoker %><br>
+        <%= f.check_box :smoker, id:'smoker' %>
+      </div>
+        <%= link_to 'request_quote', "", id: 'request' %>
+      <div class="field">
+        <%= f.label :coverage_amount ,"Coverage Amount($)" %><br>
+        <%= f.text_field :coverage_amount %>
+      </div>
+        <div class="field">
+          <%= f.label :monthly_amount,"Monthly Amount($)" %><br>
+          <%= f.text_field :monthly_amount %>
+        </div>
+      <div class="field">
+        <%= f.label :insurance_years %><br>
+        <%= f.text_field :insurance_years %>
+      </div>
+      <div class="field">
+        <%= f.label :user_id %><br>
+        <%= f.number_field :user_id %>
+      </div>
+      <a >
+        <%= f.submit %>
+      </a>
+    <% end %>
+</div>
