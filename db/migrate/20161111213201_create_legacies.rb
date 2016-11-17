@@ -6,7 +6,7 @@ class CreateLegacies < ActiveRecord::Migration
       t.boolean :smoker
       t.decimal :coverage_amount
       t.decimal :monthly_amount
-      t.float :insurance_years
+      t.float   :insurance_years
       t.integer :user_id
 
       t.timestamps null: false

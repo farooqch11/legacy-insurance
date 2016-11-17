@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  age: MyString
+  : 1
+  pns: MyString
+  : 9.99
+  sns: MyString
+  : 9.99
+  rate_type: MyString
+  : MyString
+
+two:
+  age: MyString
+  : 1
+  pns: MyString
+  : 9.99
+  sns: MyString
+  : 9.99
+  rate_type: MyString
+  : MyString
