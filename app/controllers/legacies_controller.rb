@@ -1,4 +1,5 @@
 class LegaciesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_legacy, only: [:show, :edit, :update, :destroy ]
   layout "new"
 
@@ -15,7 +16,7 @@ class LegaciesController < ApplicationController
 
   # GET /legacies/new
   def new
-    @legacy = Legacy.new
+    @legacy = current_user.build_legacy
   end
 
   # GET /legacies/1/edit
@@ -64,19 +65,63 @@ class LegaciesController < ApplicationController
 
   def calculate_amount
       @age= params[:age]
+      @gender= params[:gender]
       @smoker= params[:smoker]
       @relationship_status = params[:relationship_status]
       @ammounts =Faceamount.where(:relationship_status => @relationship_status)
       pricing = @ammounts.where("start_age <= ? and  end_age >= ?",@age,@age)
 
-      @calulated_amount= pricing.first.amount.to_f
+      @coverage_amount = pricing.first.amount.to_f
+      @coverage_factor = pricing.first.coverage_factor
 
-      if @calulated_amount <= 249000
-      elsif @calulated_amount <= 249000
-      elsif @calulated_amount <= 249000
-      elsif @calulated_amount <= 249000
+
+      if @coverage_amount >= 100000 && @coverage_amount <= 249999
+        if @gender=="male"
+          if @smoker == "true"
+            @smoker_val= Pricing.male249.where(age: @age).first.sns.to_f
+          else
+            @smoker_val= Pricing.male249.where(age: @age).first.pns.to_f
+          end
+        elsif @gender=="female"
+          if @smoker == "true"
+            @smoker_val=Pricing.male249.where(age: @age).first.sns.to_f
+          else
+            @smoker_val=Pricing.male249.where(age: @age).first.pns.to_f
+          end
+        end
+      elsif @coverage_amount >= 250000 &&@coverage_amount <= 499999
+        if @gender=="male"
+          if @smoker == "true"
+            @smoker_val= Pricing.male499.where(age: @age).first.sns.to_f
+          else
+            @smoker_val= Pricing.male499.where(age: @age).first.pns.to_f
+          end
+        elsif @gender=="female"
+          if @smoker == "true"
+            @smoker_val=Pricing.male499.where(age: @age).first.sns.to_f
+          else
+            @smoker_val=Pricing.male499.where(age: @age).first.pns.to_f
+          end
+        end
+
+      elsif @coverage_amount >= 500000 && @coverage_amount <= 2000000
+        if @gender=="male"
+          if @smoker == "true"
+            @smoker_val= Pricing.male499.where(age: @age).first.sns.to_f
+          else
+            @smoker_val= Pricing.male499.where(age: @age).first.pns.to_f
+          end
+        elsif @gender=="female"
+          if @smoker == "true"
+            @smoker_val=Pricing.male2m.where(age: @age).first.sns.to_f
+          else
+            @smoker_val=Pricing.female2m.where(age: @age).first.pns.to_f
+          end
+        end
 
       end
+
+      @total_monthly = (@coverage_factor * @smoker_val) + (30* 0.088)
       respond_to do |format|
         format.js {   }
       end
@@ -89,6 +134,6 @@ class LegaciesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def legacy_params
-      params.require(:legacy).permit(:age, :relationship_status, :smoker, :coverage_amount, :insurance_years, :user_id)
+      params.require(:legacy).permit(:age,:gender, :relationship_status, :smoker, :coverage_amount, :insurance_years, :user_id)
     end
 end

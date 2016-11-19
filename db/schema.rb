@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161117192029) do
+ActiveRecord::Schema.define(version: 20161118224737) do
 
   create_table "blogs", force: :cascade do |t|
     t.string   "Title"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20161117192029) do
     t.decimal  "amount"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
+    t.integer  "coverage_factor"
   end
 
   create_table "legacies", force: :cascade do |t|
@@ -39,6 +40,7 @@ ActiveRecord::Schema.define(version: 20161117192029) do
     t.integer  "user_id"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
+    t.integer  "gender"
   end
 
   create_table "policies", force: :cascade do |t|

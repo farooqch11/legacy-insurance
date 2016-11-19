@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
-  resources :legacies
+
   match '/calculate_amount' => 'legacies#calculate_amount', via: :post
   get 'planner/index'
 
   resources :blogs
   resources :posts
   devise_for :users
+  resources :legacies
+
   get 'welcome/index'
 
   resources :policies

@@ -14,11 +14,13 @@
 
             var age = $("#age").val();
             var relationship = $("#legacy_relationship_status").val();
+            var gender = $("#legacy_gender").val();
+            alert(gender);
             var smoker = "false";
             if ($("#smoker").is(':checked'))
                 smoker = "true";
             //alert(age +" --"+relationship+"--"+smoker);
-            var data = { 'age': age, 'relationship_status': relationship, 'smoker': smoker };
+            var data = { 'age': age, 'relationship_status': relationship, 'smoker': smoker ,'gender': gender};
             $.ajax({
                 type: "POST",
                 url: '/calculate_amount',

@@ -17,6 +17,10 @@
         <%= f.number_field :age, id: 'age' %>
       </div>
       <div class="field">
+        <%= f.label :gender %><br>
+        <%= f.select(:gender, Legacy.genders.keys.map {|role| [role.titleize,role]}) %>
+      </div>
+      <div class="field">
         <%= f.label :relationship_status %><br>
         <%= f.select(:relationship_status, Legacy.relationship_statuses.keys.map {|role| [role.titleize,role]}) %>
       </div>
