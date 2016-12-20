@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161118224737) do
+ActiveRecord::Schema.define(version: 20161220190428) do
 
   create_table "blogs", force: :cascade do |t|
     t.string   "Title"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20161118224737) do
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
     t.integer  "coverage_factor"
+    t.string   "prefered_insurance"
   end
 
   create_table "legacies", force: :cascade do |t|

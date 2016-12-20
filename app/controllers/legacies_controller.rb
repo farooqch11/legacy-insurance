@@ -73,6 +73,7 @@ class LegaciesController < ApplicationController
 
       @coverage_amount = pricing.first.amount.to_f
       @coverage_factor = pricing.first.coverage_factor
+      @prefered_insurance = pricing.first.prefered_insurance
 
 
       if @coverage_amount >= 100000 && @coverage_amount <= 249999
@@ -84,9 +85,9 @@ class LegaciesController < ApplicationController
           end
         elsif @gender=="female"
           if @smoker == "true"
-            @smoker_val=Pricing.male249.where(age: @age).first.sns.to_f
+            @smoker_val=Pricing.female249.where(age: @age).first.sns.to_f
           else
-            @smoker_val=Pricing.male249.where(age: @age).first.pns.to_f
+            @smoker_val=Pricing.female249.where(age: @age).first.pns.to_f
           end
         end
       elsif @coverage_amount >= 250000 &&@coverage_amount <= 499999
@@ -98,9 +99,9 @@ class LegaciesController < ApplicationController
           end
         elsif @gender=="female"
           if @smoker == "true"
-            @smoker_val=Pricing.male499.where(age: @age).first.sns.to_f
+            @smoker_val=Pricing.female499.where(age: @age).first.sns.to_f
           else
-            @smoker_val=Pricing.male499.where(age: @age).first.pns.to_f
+            @smoker_val=Pricing.female499.where(age: @age).first.pns.to_f
           end
         end
 
@@ -113,15 +114,40 @@ class LegaciesController < ApplicationController
           end
         elsif @gender=="female"
           if @smoker == "true"
-            @smoker_val=Pricing.male2m.where(age: @age).first.sns.to_f
+            @smoker_val=Pricing.female2m.where(age: @age).first.sns.to_f
           else
             @smoker_val=Pricing.female2m.where(age: @age).first.pns.to_f
           end
         end
 
       end
+      if @prefered_insurance == "GPM"
+        if @gender== "male"
+          if @smoker == "true"
+            @smoker_val_gpm= Pricing.male1ht.where(age: @age).first.sns.to_f
+          else
+            @smoker_val_gpm= Pricing.male1ht.where(age: @age).first.pns.to_f
+          end
+        elsif @gender=="female"
+          if @smoker == "true"
+            @smoker_val_gpm= Pricing.female1ht.where(age: @age).first.sns.to_f
+          else
+            @smoker_val_gpm= Pricing.female1ht.where(age: @age).first.pns.to_f
+          end
+        end
+      end
 
-      @total_monthly = (@coverage_factor * @smoker_val) + (30* 0.088)
+      @total_monthly_GPM = (@coverage_factor * @smoker_val_gpm.to_f) + (30* 0.088)
+
+      @total_monthly_term= (@coverage_factor * @smoker_val.to_f) + (30* 0.088)
+
+
+      if @prefered_insurance == "GPM"
+        @total_monthly = @total_monthly_GPM
+      else
+        @total_monthly = @total_monthly_term
+      end
+
       respond_to do |format|
         format.js {   }
       end
