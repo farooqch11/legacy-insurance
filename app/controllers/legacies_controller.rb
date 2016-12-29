@@ -137,9 +137,9 @@ class LegaciesController < ApplicationController
         end
       end
 
-      @total_monthly_GPM = (@coverage_factor * @smoker_val_gpm.to_f) + (30* 0.088)
+      @total_monthly_GPM = (@coverage_factor * @smoker_val_gpm.to_f + 4) * 0.088
 
-      @total_monthly_term= (@coverage_factor * @smoker_val.to_f) + (30* 0.088)
+      @total_monthly_term= (@coverage_factor * @smoker_val.to_f + 30)* 0.088
 
 
       if @prefered_insurance == "GPM"
