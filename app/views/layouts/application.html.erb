@@ -4,23 +4,72 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
-</head>
 
+</head>
 <body>
+<div id="wrapper">
+  <header id="header">
+    <div class="header-hold">
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+        <h1><a href="#"><img src="<%=image_url('logo.png')%>" alt="logo"></a></h1>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+        <nav id="nav">
+          <ul>
+            <li class="active"><a href="#">Login</a></li>
+            <li class="active"><a href="#">Signup</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+</div>
+
 <%= yield %>
+
+
 </body>
 
 
+<div id="footer">
+  <div class="footer-content">
+    <div class="container">
+      <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+        <strong class="title">COMPANY</strong>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Twiiter</a></li>
+        </ul>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+        <strong class="title">PRODUCTS</strong>
+        <ul>
+          <li><a href="#">Legacy Life.</a></li>
+          <li><a href="#">legacy Med.</a></li>
+        </ul>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+        <strong class="title">INFORMATION</strong>
+        <ul>
+          <li><a href="#">Life insurance FAQS.</a></li>
+          <li><a href="#">Genetics Library</a></li>
+        </ul>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+        <strong class="title">LEGAL</strong>
+        <ul>
+          <li><a href="#">Claim</a></li>
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
 
-
-
-
-<!--<footer>
-<div class="">
-<p class="out">  <%= link_to "Sign out", destroy_user_session_path, :method => :delete %> </p>
-</div> <p class="copy"> &copy LegacyEmpowermentGroup </p>
-</footer>
-</html>-->

@@ -13,3 +13,36 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require bootstrap
+//= require jcf.js
+//= require jcf.checkbox
+//= require jcf.select
+//= require bootstrap.min
+//= require jquery.bootstrap.wizard
+//= require prettify
+//= require jqueryui
+//= require wow
+
+
+
+
+// replace custom forms
+jcf.lib.domReady(function () {
+    jcf.customForms.replaceAll();
+});
+
+wow = new WOW(
+    {
+        animateClass: 'animated',
+        offset:       200,
+        callback:     function(box) {
+            console.log("WOW: animating <" + box.tagName.toLowerCase() + ">")
+        }
+    }
+);
+wow.init();
+document.getElementById('moar').onclick = function() {
+    var section = document.createElement('section');
+    section.className = 'section--purple wow fadeInUp';
+    this.parentNode.insertBefore(section, this);
+};

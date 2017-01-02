@@ -7,11 +7,7 @@ class ApplicationController < ActionController::Base
 
 
   def after_sign_in_path_for(resource)
-    if resource.policy.present?
-      policy_path(resource.policy)
-    else
-      new_policy_path
-    end
+      new_legacy_path
   end
 
 

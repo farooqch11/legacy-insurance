@@ -1,7 +1,7 @@
 class LegaciesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_legacy, only: [:show, :edit, :update, :destroy ]
-  layout "new"
+  
 
   # GET /legacies
   # GET /legacies.json
