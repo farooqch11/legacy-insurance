@@ -7,7 +7,7 @@
     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 same">
       <div class="text-area">
         <p class="wow fadeInUp">We’ll help you use life insurance as a means to a better future.</p>
-        <a class="btn-plan" href="#">PLAN YOUR LEGACY</a>
+        <a class="btn-plan" href="<%=new_legacy_path%>">PLAN YOUR LEGACY</a>
       </div>
     </div>
   </div>
@@ -91,3 +91,15 @@
 
 
 <p id="notice"><%= notice %>
+<script>
+    wow = new WOW(
+            {
+                animateClass: 'animated',
+                offset:       200,
+                callback:     function(box) {
+                    console.log("WOW: animating <" + box.tagName.toLowerCase() + ">")
+                }
+            }
+    );
+    wow.init();
+</script>

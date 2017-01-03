@@ -1,82 +1,82 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
-  <%= stylesheet_link_tag    "new" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+  <!--<meta charset="utf-8" />-->
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0" />-->
+  <!--<title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>-->
+  <!--<%= stylesheet_link_tag    "new" %>-->
+  <!--<%= javascript_include_tag "application" %>-->
+  <!--<%= csrf_meta_tags %>-->
+<!--</head>-->
 
 
 
 
-<body  class="main-wrap">
-<div class="wrapper">
-  <!-- Logo area Start -->
-  <header>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-sm-12">
-          <div class="logo">
-            <a href="index.html"><img src=<%=image_url('logo.png')%> alt="" title="" /></a>
-          </div>
+<!--<body  class="main-wrap">-->
+<!--<div class="wrapper">-->
+  <!--&lt;!&ndash; Logo area Start &ndash;&gt;-->
+  <!--<header>-->
+    <!--<div class="container-fluid">-->
+      <!--<div class="row">-->
+        <!--<div class="col-sm-12">-->
+          <!--<div class="logo">-->
+            <!--<a href="index.html"><img src=<%=image_url('logo.png')%> alt="" title="" /></a>-->
+          <!--</div>-->
 
-          <div class="dropdown-menu-right menu">
-            <ul>
-              <% if user_signed_in? %>
-                  <li class="first"><%= link_to "Log out", destroy_user_session_path, :method => :delete %></li>
-                  <li class="last"><a href="#">Signed in as <%= current_user.email %></a></li>
-              <% else %>
-                  <li class="first"><a href="<%=new_user_registration_path%>">Sign up</a></li>
-                  <li class="last"><a href="<%=new_user_session_path%>">Login</a></li>
-              <% end %>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
+          <!--<div class="dropdown-menu-right menu">-->
+            <!--<ul>-->
+              <!--<% if user_signed_in? %>-->
+                  <!--<li class="first"><%= link_to "Log out", destroy_user_session_path, :method => :delete %></li>-->
+                  <!--<li class="last"><a href="#">Signed in as <%= current_user.email %></a></li>-->
+              <!--<% else %>-->
+                  <!--<li class="first"><a href="<%=new_user_registration_path%>">Sign up</a></li>-->
+                  <!--<li class="last"><a href="<%=new_user_session_path%>">Login</a></li>-->
+              <!--<% end %>-->
+            <!--</ul>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</header>-->
   <!-- Logo area end -->
   <%= yield %>
 
-</div>
-</body>
+<!--</div>-->
+<!--</body>-->
 
-<!--  Footer Start -->
-<footer>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-3 col-sm-3">
-        <h4 class="footer-label">COMPANY</h4>
-        <a href="#">About</a>
-        <a href="#">Blog</a>
-        <a href="#">Facebook</a>
-        <a href="#">Twiiter</a>
-      </div>
+<!--&lt;!&ndash;  Footer Start &ndash;&gt;-->
+<!--<footer>-->
+  <!--<div class="container-fluid">-->
+    <!--<div class="row">-->
+      <!--<div class="col-md-3 col-sm-3">-->
+        <!--<h4 class="footer-label">COMPANY</h4>-->
+        <!--<a href="#">About</a>-->
+        <!--<a href="#">Blog</a>-->
+        <!--<a href="#">Facebook</a>-->
+        <!--<a href="#">Twiiter</a>-->
+      <!--</div>-->
 
-      <div class="col-md-3 col-sm-3">
-        <h4 class="footer-label">PRODUCTS</h4>
-        <a href="#">Legacy Life.</a>
-        <a href="#">legacy Med.</a>
-      </div>
-
-
-      <div class="col-md-3 col-sm-3">
-        <h4 class="footer-label">INFORMATION</h4>
-        <a href="#">Life insurance FAQS.</a>
-        <a href="#">Genetics Library</a>
-      </div>
+      <!--<div class="col-md-3 col-sm-3">-->
+        <!--<h4 class="footer-label">PRODUCTS</h4>-->
+        <!--<a href="#">Legacy Life.</a>-->
+        <!--<a href="#">legacy Med.</a>-->
+      <!--</div>-->
 
 
+      <!--<div class="col-md-3 col-sm-3">-->
+        <!--<h4 class="footer-label">INFORMATION</h4>-->
+        <!--<a href="#">Life insurance FAQS.</a>-->
+        <!--<a href="#">Genetics Library</a>-->
+      <!--</div>-->
 
-      <div class="col-md-3 col-sm-3">
-        <h4 class="footer-label">LEGAL</h4>
-        <a href="#">Claim</a>
-        <a href="#">Privacy</a>
-        <a href="#">Terms</a>
-      </div>
+
+
+      <!--<div class="col-md-3 col-sm-3">-->
+        <!--<h4 class="footer-label">LEGAL</h4>-->
+        <!--<a href="#">Claim</a>-->
+        <!--<a href="#">Privacy</a>-->
+        <!--<a href="#">Terms</a>-->
+      <!--</div>-->
 
 
 

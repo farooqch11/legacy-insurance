@@ -12,21 +12,30 @@
 </head>
 <body>
 <div id="wrapper">
-  <header id="header">
-    <div class="header-hold">
-      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-        <h1><a href="#"><img src="<%=image_url('logo.png')%>" alt="logo"></a></h1>
-      </div>
-      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-        <nav id="nav">
-          <ul>
-            <li class="active"><a href="#">Login</a></li>
-            <li class="active"><a href="#">Signup</a></li>
-          </ul>
-        </nav>
-      </div>
-    </div>
-  </header>
+  <% if  devise_controller?%>
+
+  <%else%>
+      <header id="header">
+        <div class="header-hold">
+          <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+            <h1><a href="#"><img src="<%=image_url('logo.png')%>" alt="logo"></a></h1>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+            <nav id="nav">
+              <ul>
+                <% if user_signed_in? %>
+                    <li class="active"><%= link_to "Log out", destroy_user_session_path, :method => :delete %></li>
+                    <li class="active"><a href="#">Signed in as <%= current_user.email %></a></li>
+                <% else %>
+                    <li class="active"><a href="<%=new_user_session_path%>">Login</a></li>
+                    <li class="active"><a href="<%=new_user_registration_path%>">Signup</a></li>
+                <% end %>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </header>
+  <%end%>
 </div>
 
 <%= yield %>
@@ -34,42 +43,45 @@
 
 </body>
 
+<% if devise_controller? %>
 
-<div id="footer">
-  <div class="footer-content">
-    <div class="container">
-      <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-        <strong class="title">COMPANY</strong>
-        <ul>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Facebook</a></li>
-          <li><a href="#">Twiiter</a></li>
-        </ul>
-      </div>
-      <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-        <strong class="title">PRODUCTS</strong>
-        <ul>
-          <li><a href="#">Legacy Life.</a></li>
-          <li><a href="#">legacy Med.</a></li>
-        </ul>
-      </div>
-      <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-        <strong class="title">INFORMATION</strong>
-        <ul>
-          <li><a href="#">Life insurance FAQS.</a></li>
-          <li><a href="#">Genetics Library</a></li>
-        </ul>
-      </div>
-      <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-        <strong class="title">LEGAL</strong>
-        <ul>
-          <li><a href="#">Claim</a></li>
-          <li><a href="#">Privacy</a></li>
-          <li><a href="#">Terms</a></li>
-        </ul>
+<%else%>
+    <div id="footer">
+      <div class="footer-content">
+        <div class="container">
+          <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+            <strong class="title">COMPANY</strong>
+            <ul>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Facebook</a></li>
+              <li><a href="#">Twiiter</a></li>
+            </ul>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+            <strong class="title">PRODUCTS</strong>
+            <ul>
+              <li><a href="#">Legacy Life.</a></li>
+              <li><a href="#">legacy Med.</a></li>
+            </ul>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+            <strong class="title">INFORMATION</strong>
+            <ul>
+              <li><a href="#">Life insurance FAQS.</a></li>
+              <li><a href="#">Genetics Library</a></li>
+            </ul>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+            <strong class="title">LEGAL</strong>
+            <ul>
+              <li><a href="#">Claim</a></li>
+              <li><a href="#">Privacy</a></li>
+              <li><a href="#">Terms</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
+<%end%>
 
