@@ -3,19 +3,20 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+  <title><%= content_for?(:title) ? yield(:title) : "Plan My Legacy" %></title>
 
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 
 </head>
-<body>
-<div id="wrapper">
+<body style="background: #0d334e">
+<div id="wrapper" class="container-fluid">
+  <div class="row">
   <% if  devise_controller?%>
 
   <%else%>
-      <header id="header">
+      < id="header">
         <div class="header-hold">
           <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
             <h1><a href="#"><img src="<%=image_url('logo.png')%>" alt="logo"></a></h1>
@@ -34,13 +35,14 @@
             </nav>
           </div>
         </div>
-      </header>
+
+
   <%end%>
 </div>
-
+<div class="main" style="background: #fff;">
 <%= yield %>
-
-
+</div>
+</div>
 </body>
 
 <% if devise_controller? %>

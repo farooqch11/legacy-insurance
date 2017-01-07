@@ -4,6 +4,9 @@
       <img class="bg-body" src="<%=image_url('img6.jpg')%>" alt="image description">
       <div class="signup-form" style="width: 377px;left: 54%;">
         <h2>LogIn</h2>
+        <%- flash.each do |name, msg| -%>
+            <%= content_tag :div, msg, id: "flash_#{name}" %>
+        <%- end -%>
         <div class="hold">
           <!--<div class="row"><input type="text" placeholder="Your name"></div>-->
           <div class="row"><%= f.email_field :email, autofocus: true, placeholder: 'Email Address' %></div>

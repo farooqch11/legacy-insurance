@@ -1,52 +1,190 @@
-<div class="container-fluid">
-    <%= form_for(@legacy ) do   |f| %>
-      <% if @legacy.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(@legacy.errors.count, "error") %> prohibited this legacy from being saved:</h2>
+<%= simple_form_for @legacy  do   |f| %>
+    <div style="background: #0d334e">
 
-          <ul>
-          <% @legacy.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-          </ul>
-        </div>
-      <% end %>
+      <div class="form-block">
+        <div id="rootwizard">
+          <div class="navbar hidden">
+            <div class="navbar-inner">
+              <div class="container">
+                <ul>
+                  <li class="hidden"><a href="#tab1" data-toggle="tab"></a></li>
+                  <li class="hidden"><a href="#tab2" data-toggle="tab"></a></li>
+                  <li class="hidden"><a href="#tab3" data-toggle="tab"></a></li>
 
-      <div class="field">
-        <%= f.label :age %><br>
-        <%= f.number_field :age, id: 'age' %>
-      </div>
-      <div class="field">
-        <%= f.label :gender %><br>
-        <%= f.select(:gender, Legacy.genders.keys.map {|role| [role.titleize,role]}) %>
-      </div>
-      <div class="field">
-        <%= f.label :relationship_status %><br>
-        <%= f.select(:relationship_status, Legacy.relationship_statuses.keys.map {|role| [role.titleize,role]}) %>
-      </div>
-      <div class="field">
-        <%= f.label :smoker %><br>
-        <%= f.check_box :smoker, id:'smoker' %>
-      </div>
-        <%= link_to 'request_quote', "", id: 'request' %>
-      <div class="field">
-        <%= f.label :coverage_amount ,"Coverage Amount($)" %><br>
-        <%= f.text_field :coverage_amount %>
-      </div>
-        <div class="field">
-          <%= f.label :monthly_amount,"Monthly Amount($)" %><br>
-          <%= f.text_field :monthly_amount %>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="tab-content">
+
+            <div class="tab-pane" id="tab1">
+
+              <div class="block2">
+                <h3 class="text text-center" style="    margin-left: 37%;margin-bottom: 90px;">Plan Your Legacy.</h3>
+
+                <div class="container">
+                  <div class="year-block">
+                                <span class="down">
+                                <span class="text">I am </span>
+                                <div class="hold"> <%= f.input :age, id: 'age' ,label: false %></div>
+                                <span class="text"> years old, </span>
+                                <div class="select-hold">
+                                  <%= f.select(:gender, Legacy.genders.keys.map {|role| [role.titleize,role]}) %>
+                                </div>
+                                </span>
+                                <span class="down">
+
+                                <span class="text"> and I am </span>
+                                <div class="select-hold" style="width: 146px;">
+                                  <%= f.select(:relationship_status, Legacy.relationship_statuses.keys.map {|role| [role.titleize,role]}) %>
+                                </div>
+                                </span>
+                    <!--<li class="button-area next">-->
+                    <!--<input type="button" value="Continue">-->
+                    <!--</li>-->
+                    <ul class="pager wizard ">
+                      <!--<li class="previous button"><input type="button" value="Continue"></li>-->
+                      <li class="next button"><input type="button" value="Continue"></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+            <div class="tab-pane" id="tab2">
+              <div class="block1">
+                <h3 class="text text-center" style="    margin-left: 37%;margin-bottom: 90px;">Plan Your Legacy.</h3>
+                <div class="container">
+                  <ul class="controls-list">
+                    <li>
+                      <!--<input id="chk1" type="checkbox" />-->
+                      <%= f.check_box :smoker, id:'smoker' %>
+                      <label for="chk1">I don’t Smoke </label>
+                    </li>
+                    <li>
+                      <input id="chk2" type="checkbox" />
+                      <label for="chk2">I have no health concerns</label>
+                    </li>
+                    <li>
+                      <input id="chk3" type="checkbox" />
+                      <label for="chk3">I have recently lost weight</label>
+                    </li>
+
+                    <!--<li><input type="button" value="Continue"></li>-->
+                    <ul class="pager wizard ">
+                      <li class="next button" id="request"><input type="button" value="Continue" ></li>
+                      <!--<li class="previous button"><input type="button" value="Previous"></li>-->
+
+                    </ul>
+
+                  </ul>
+
+                </div>
+              </div>
+
+            </div>
+            <div class="tab-pane" id="tab3" style="background-color: #ffffff;">
+              <!--<header class="head"><h2>Quote</h2></header>-->
+
+              <div class="quote-area">
+                <div class="container">
+                  <div class="left-area">
+                    <div class="lagacy-area">
+                      <div class="hold">
+                        <strong class="title">Legacy Advice</strong>
+                        <p>With a house and kids there is a huge need for a large term policy with a coverage amount of</p>
+                        <span class="prices" id>$1,000,000</span>
+                      </div>
+                    </div>
+                    <div class="block1">
+                      <strong class="title">Coverage Amount $ </strong>
+                      <%= f.input :coverage_amount , disabled: true ,label: false, input_html: { class: "coverage-amount", id: "amount"}%>
+                      <div class="scroll-area" id="slider1">
+                        <!--<div id="slider1"></div>-->
+                        <!--<input class="price-counter",type="text" id="amount" readonly>-->
+                        <!--<div class="price-counter" id="">$1,000,000</div>-->
+                      </div>
+
+                    </div>
+                    <div class="block1 block2">
+                      <strong class="title">Term Length</strong>
+                      <%= f.input :insurance_years ,disabled: true ,label: false,input_html: { class: "coverage-amount", id: "year"}%>
+                      <div class="scroll-area" id="slider2">
+                        <!--<div id="slider2"></div>-->
+                        <!--<input class="price-counter",type="text" id="year" readonly>-->
+                        <!--<div class="price-counter">10 Years</div>-->
+                      </div>
+                    </div>
+                  </div>
+                  <div class="right-area">
+                    <a class="btn-get" href="#">GET</a>
+                    <strong class="payment">Monthly Payment $ </strong>
+                    <%= f.input :monthly_amount,disabled: true,label: false,input_html: { class: "price coverage-amount" }  %>
+                    <!--<span class="price">$16.45</span>-->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div style="background:#0d334e; height:100px; overflow:hidden;"></div>
+
+
+          </div>
+
+          <!--<ul class="pager wizard ">-->
+          <!--<li class="previous button"><a href="#">Previous</a></li>-->
+          <!--<li class="next button"><a href="#">Continue</a></li>-->
+          <!--</ul>-->
+
         </div>
-      <div class="field">
-        <%= f.label :insurance_years %><br>
-        <%= f.text_field :insurance_years %>
       </div>
-      <div class="field">
-        <%= f.label :user_id %><br>
-        <%= f.number_field :user_id %>
-      </div>
-      <a >
-        <%= f.submit %>
-      </a>
-    <% end %>
-</div>
+
+    </div>
+    </div>
+
+
+
+
+<% end %>
+
+
+
+<script>
+
+    $(document).ready(function () {
+        jcf.customForms.replaceAll();
+    $('#rootwizard').bootstrapWizard();
+
+    $( function() {
+      var slider1 = $( "#slider1" ).slider({
+            orientation: "vertical",
+            value: 100,
+            min: 50000,
+            max: 1000000,
+            step: 10000,
+            slide: function( event, ui ) {
+                $( "#amount" ).val(  ui.value );
+                $('#request').trigger("click");
+            }
+        });
+        $( "#amount" ).val( null );
+    } );
+
+    $( function() {
+        var slider2 =  $( "#slider2" ).slider({
+            orientation: "vertical",
+            value:10,
+            min: 10,
+            max: 100,
+            step: 10,
+            slide: function( event, ui ) {
+                $( "#year" ).val(ui.value );
+            }
+        });
+        $( "#year" ).val(  $( "#slider2" ).slider( "value" ) );
+    } );
+
+
+});
+
+</script>

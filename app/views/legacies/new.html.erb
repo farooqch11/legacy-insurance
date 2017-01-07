@@ -1,8 +1,7 @@
-<h1>New Legacy</h1>
+
 
 <%= render 'form' %>
 
-<%= link_to 'Back', legacies_path %>
 
 
 <script>
@@ -12,15 +11,16 @@
 
         $('#request').on('click', function(){
 
-            var age = $("#age").val();
+            var age = $("#legacy_age").val();
             var relationship = $("#legacy_relationship_status").val();
             var gender = $("#legacy_gender").val();
+            var coverage = $("#amount").val();
             //alert(gender);
-            var smoker = "false";
+            var smoker = "true";
             if ($("#smoker").is(':checked'))
-                smoker = "true";
-            //alert(age +" --"+relationship+"--"+smoker);
-            var data = { 'age': age, 'relationship_status': relationship, 'smoker': smoker ,'gender': gender};
+                smoker = "false";
+//            alert(age +" --"+relationship+"--"+gender +"--"+smoker);
+            var data = { 'age': age, 'relationship_status': relationship, 'smoker': smoker ,'gender': gender ,'coverage': coverage};
             $.ajax({
                 type: "POST",
                 url: '/calculate_amount',

@@ -67,7 +67,9 @@ class LegaciesController < ApplicationController
       @age= params[:age]
       @gender= params[:gender]
       @smoker= params[:smoker]
+      @coverage_params= params[:coverage]
       @relationship_status = params[:relationship_status]
+
       @ammounts =Faceamount.where(:relationship_status => @relationship_status)
       pricing = @ammounts.where("start_age <= ? and  end_age >= ?",@age,@age)
 
@@ -75,6 +77,10 @@ class LegaciesController < ApplicationController
       @coverage_factor = pricing.first.coverage_factor
       @prefered_insurance = pricing.first.prefered_insurance
 
+      if @coverage_params.present?
+        puts @coverage_params
+        @coverage_amount = @coverage_params.to_i
+      end
 
       if @coverage_amount >= 100000 && @coverage_amount <= 249999
         if @gender=="male"
@@ -147,6 +153,7 @@ class LegaciesController < ApplicationController
       else
         @total_monthly = @total_monthly_term
       end
+      puts @total_monthly
 
       respond_to do |format|
         format.js {   }
