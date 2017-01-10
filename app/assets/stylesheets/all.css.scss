@@ -1512,3 +1512,64 @@ input:focus {
   padding: 0px 0px;
 
 }
+
+/*New additions 01-09-2017*/
+#footer .footer-content {
+  background: #0b334f none repeat scroll 0 0;
+  padding: 100px 0;
+}
+#footer .address-footer {
+  color: #97a1aa;
+  font-size: 15px;
+}
+#footer .address-footer {
+  text-align: left;
+}
+.form-footer .email {
+  background: #557184 none repeat scroll 0 0;
+  border: 0 none;
+  border-radius: 20px;
+  color: #e1e1e1;
+  font-size: 15px;
+  margin-top: 12px;
+  min-width: 245px;
+  padding: 8px 19px;
+}
+.form-footer input[type="image"] {
+  height: 25px;
+  position: relative;
+  right: 37px;
+  top: 6px;
+}
+.social-footer img {
+  margin: 0 12px;
+}
+.social-footer {
+  margin-top: 20px;
+  text-align: right;
+}
+.footer-logo {
+  margin-bottom: -12px;
+  margin-top: -80px;
+  text-align: center;
+}
+.form-footer {
+  margin-left: 16px;
+  text-align: center;
+}
+
+
+@media only screen and (max-width: 980px) {
+  #footer .address-footer {
+    text-align: center;
+  }
+  .form-footer {
+    margin-left: 0;
+    margin-top: 23px;
+    text-align: center;
+  }
+  .social-footer {
+    margin-top: 46px;
+    text-align: center;
+  }
+}

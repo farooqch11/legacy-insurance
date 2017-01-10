@@ -44,6 +44,8 @@
                     <!--</li>-->
                     <ul class="pager wizard ">
                       <!--<li class="previous button"><input type="button" value="Continue"></li>-->
+                      <br>
+                      <br>
                       <li class="next button"><input type="button" value="Continue"></li>
                     </ul>
                   </div>
@@ -118,7 +120,7 @@
                     </div>
                   </div>
                   <div class="right-area">
-                    <a class="btn-get" href="#">GET</a>
+                    <a class="btn-get disabled">GET</a>
                     <strong class="payment">Monthly Payment $ </strong>
                     <%= f.input :monthly_amount,disabled: true,label: false,input_html: { class: "price coverage-amount" }  %>
                     <!--<span class="price">$16.45</span>-->
@@ -126,7 +128,7 @@
                 </div>
               </div>
             </div>
-            <div style="background:#0d334e; height:100px; overflow:hidden;"></div>
+            <!--<div style="background:#0d334e; height:100px; overflow:hidden;"></div>-->
 
 
           </div>
@@ -152,7 +154,8 @@
 <script>
 
     $(document).ready(function () {
-        jcf.customForms.replaceAll();
+//        jcf.customForms.replaceAll();
+//        $("#legacy_gender").blur();
     $('#rootwizard').bootstrapWizard();
 
     $( function() {

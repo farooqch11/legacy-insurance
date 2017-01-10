@@ -16,7 +16,7 @@ class LegaciesController < ApplicationController
 
   # GET /legacies/new
   def new
-    @legacy = current_user.build_legacy
+    @legacy = current_user.legacies.new
   end
 
   # GET /legacies/1/edit
