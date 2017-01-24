@@ -114,9 +114,9 @@ class LegaciesController < ApplicationController
       elsif @coverage_amount >= 500000 && @coverage_amount <= 2000000
         if @gender=="male"
           if @smoker == "true"
-            @smoker_val= Pricing.male499.where(age: @age).first.sns.to_f
+            @smoker_val= Pricing.male2m.where(age: @age).first.sns.to_f
           else
-            @smoker_val= Pricing.male499.where(age: @age).first.pns.to_f
+            @smoker_val= Pricing.male2m.where(age: @age).first.pns.to_f
           end
         elsif @gender=="female"
           if @smoker == "true"
