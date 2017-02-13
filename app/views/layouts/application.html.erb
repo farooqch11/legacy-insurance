@@ -13,10 +13,10 @@
 <body style="background: #0d334e">
 <div id="wrapper" class="container-fluid">
   <div class="row">
-  <% if  devise_controller?%>
+  <% if  devise_controller? || params[:controller] == "welcome" %>
 
   <%else%>
-      < id="header">
+      <div id="header">
         <div class="header-hold">
           <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
             <h1><a href="#"><img src="<%=image_url('logo.png')%>" alt="logo"></a></h1>
@@ -35,6 +35,8 @@
             </nav>
           </div>
         </div>
+    </div>
+    </div>
 
 
   <%end%>

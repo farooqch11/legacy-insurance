@@ -3,42 +3,41 @@
 <%= render 'form' %>
 
 
-
 <script>
 
-    jQuery(document).ready(function($){
-
-
-        $('#request').on('click', function(){
-
-            var age = $("#legacy_age").val();
-            var relationship = $("#legacy_relationship_status").val();
-            var gender = $("#legacy_gender").val();
-            var coverage = $("#amount").val();
-            //alert(gender);
-            var smoker = "true";
-            if ($("#smoker").is(':checked'))
-                smoker = "false";
-//            alert(age +" --"+relationship+"--"+gender +"--"+smoker);
-            var data = { 'age': age, 'relationship_status': relationship, 'smoker': smoker ,'gender': gender ,'coverage': coverage};
-            $.ajax({
-                type: "POST",
-                url: '/calculate_amount',
-                data: data,
-                /**
-                 * Response from your controller
-                 */
-                success: function(response) {
-//                    $("#age").val(age);
-
-                }
-
-            });
-
-            return false; // prevents normal behaviour
-        });
-    });
-
-
-
+//    jQuery(document).ready(function($){
+//
+//
+//        $('#request').on('click', function(){
+//
+//            var age = $("#legacy_age").val();
+//            var relationship = $("#legacy_relationship_status").val();
+//            var gender = $("#legacy_gender").val();
+//            var coverage = $("#amount").val();
+//            //alert(gender);
+//            var smoker = "true";
+//            if ($("#smoker").is(':checked'))
+//                smoker = "false";
+////            alert(age +" --"+relationship+"--"+gender +"--"+smoker);
+//            var data = { 'age': age, 'relationship_status': relationship, 'smoker': smoker ,'gender': gender ,'coverage': coverage};
+//            $.ajax({
+//                type: "POST",
+//                url: '/calculate_amount',
+//                data: data,
+//                /**
+//                 * Response from your controller
+//                 */
+//                success: function(response) {
+////                    $("#age").val(age);
+//
+//                }
+//
+//            });
+//
+//            return false; // prevents normal behaviour
+//        });
+//    });
+//
+//
+////
 </script>

@@ -1,0 +1,18 @@
+<div class="nested-fields">
+    <div class="row add2">
+      <div class="col">
+        <%= f.input :name ,label: false ,:placeholder=>"Beneficiary Name"%>
+        <!--<input type="text" placeholder="Beneficiary Name">-->
+      </div>
+      <div class="col">
+        <%= f.input :dob ,:as=> 'string',label: false ,input_html: { class: 'datepicker' },:placeholder=>"Date of Birth"%>
+
+        <!--<input type="text" placeholder="Date of Birth">-->
+      </div>
+      <div class="col">
+        <%= f.input :relation ,label: false ,:placeholder=>"Relationship"%>
+        <!--<input type="text" placeholder="Relationship">-->
+      </div>
+
+    </div>
+</div>

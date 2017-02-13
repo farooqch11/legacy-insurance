@@ -1,10 +1,12 @@
-$("#amount").val("<%=@coverage_amount%>");
+$("#legacy_coverage_amount").val("<%=@coverage_amount%>");
+$("#coverage-ammount-show").text("<%= number_to_currency @coverage_amount%>");
 
 //alert("<%=@smoker_val%>");
 
 //alert("<%=@total_monthly%>");
 
 $("#legacy_monthly_amount").val("<%="%0.2f"%@total_monthly%>");
+$("#monthly-price").text("<%=  number_to_currency(@total_monthly)%>");
 
 //$( "#slider1" ).slider( "value", );
 //$( "#slider2" ).slider( "value", 10);

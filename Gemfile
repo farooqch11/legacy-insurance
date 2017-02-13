@@ -26,6 +26,7 @@ gem 'devise'
 gem 'roo'
 gem "better_errors"
 gem 'simple_form'
+gem "cocoon"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

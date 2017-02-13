@@ -1,17 +1,54 @@
-<div class="intro-area " style="background: #0d334e;">
-  <h2>Be the foundation.</h2>
-  <div class="container">
-    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 same">
-      <div class="image-area"></div>
+<!--<div class="intro-area " style="background: #0d334e;">-->
+  <!--<h2>Be the foundation.</h2>-->
+  <!--<div class="container">-->
+    <!--<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 same">-->
+      <!--<div class="image-area"></div>-->
+    <!--</div>-->
+    <!--<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 same">-->
+      <!--<div class="text-area">-->
+        <!--<p class="wow fadeInUp">We’ll help you use life insurance as a means to a better future.</p>-->
+        <!--<a class="btn-plan" href="<%=new_legacy_path%>">PLAN YOUR LEGACY</a>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</div>-->
+<!--</header>-->
+
+<header id="header" class="header-img">
+  <div class="header-wrap">
+    <div class="header-hold">
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+        <h1><a href="#"><img src="<%=image_url('logo.png')%>" alt="logo"></a></h1>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+        <nav id="nav">
+          <ul>
+            <% if user_signed_in? %>
+                <li class="active"><%= link_to "Log out", destroy_user_session_path, :method => :delete %></li>
+                <li class="active"><a href="#">Signed in as <%= current_user.email %></a></li>
+            <% else %>
+                <li class="active"><a href="<%=new_user_session_path%>">Login</a></li>
+                <li class="active"><a href="<%=new_user_registration_path%>">Signup</a></li>
+            <% end %>
+          </ul>
+        </nav>
+      </div>
     </div>
-    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 same">
-      <div class="text-area">
-        <p class="wow fadeInUp">We’ll help you use life insurance as a means to a better future.</p>
-        <a class="btn-plan" href="<%=new_legacy_path%>">PLAN YOUR LEGACY</a>
+    <div class="intro-area">
+      <h2>Be the foundation.</h2>
+      <div class="container">
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 same">
+          <div class="image-area"><!--<img src="images/img5.png" alt="image description">--></div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 same">
+          <div class="text-area">
+            <p class="wow fadeInUp">We’ll help you use life insurance as a means to a better future.</p>
+            <a class="btn-plan" href="<%=new_legacy_path%>">PLAN YOUR LEGACY</a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
 </header>
 <div id="main">
   <div class="landing-area">

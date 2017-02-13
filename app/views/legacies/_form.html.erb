@@ -10,7 +10,7 @@
                   <li class="hidden"><a href="#tab1" data-toggle="tab"></a></li>
                   <li class="hidden"><a href="#tab2" data-toggle="tab"></a></li>
                   <li class="hidden"><a href="#tab3" data-toggle="tab"></a></li>
-
+                  <li class="hidden"><a href="#tab4" data-toggle="tab"></a></li>
                 </ul>
               </div>
             </div>
@@ -87,7 +87,6 @@
 
             </div>
             <div class="tab-pane" id="tab3" style="background-color: #ffffff;">
-              <!--<header class="head"><h2>Quote</h2></header>-->
 
               <div class="quote-area">
                 <div class="container">
@@ -96,39 +95,138 @@
                       <div class="hold">
                         <strong class="title">Legacy Advice</strong>
                         <p>With a house and kids there is a huge need for a large term policy with a coverage amount of</p>
-                        <span class="prices" id>$1,000,000</span>
+                        <span class="prices" id="coverage-ammount-show">error</span>
                       </div>
                     </div>
+
                     <div class="block1">
-                      <strong class="title">Coverage Amount $ </strong>
-                      <%= f.input :coverage_amount , disabled: true ,label: false, input_html: { class: "coverage-amount", id: "amount"}%>
-                      <div class="scroll-area" id="slider1">
-                        <!--<div id="slider1"></div>-->
-                        <!--<input class="price-counter",type="text" id="amount" readonly>-->
-                        <!--<div class="price-counter" id="">$1,000,000</div>-->
+                      <div class="coveragebox">
+                        <span>Coverage amount</span>
+                        <a href="#" class="amount-btn">$ 100,000</a>
+
                       </div>
 
-                    </div>
-                    <div class="block1 block2">
-                      <strong class="title">Term Length</strong>
-                      <%= f.input :insurance_years ,disabled: true ,label: false,input_html: { class: "coverage-amount", id: "year"}%>
-                      <div class="scroll-area" id="slider2">
-                        <!--<div id="slider2"></div>-->
-                        <!--<input class="price-counter",type="text" id="year" readonly>-->
-                        <!--<div class="price-counter">10 Years</div>-->
+                      <div class="coveragebox">
+                        <span>Coverage amount</span>
+                        <a href="#" class="amount-btn">$ 100,000</a>
+
                       </div>
+
+                      <div class="coveragebox">
+                        <span>Coverage amount</span>
+                        <a href="#" class="amount-btn">$ 100,000</a>
+
+                      </div>
+
+
+                    </div>
+                    <div class="right-area">
+                      <h4>Monthly Payment</h4>
+                      <span class="price" id="monthly-price">Error</span>
+                      <ul class="pager wizard ">
+                        <li class="next button " id="request"> <input type="button" value="Get" class="btn-get" ></li>
+                        <!--<li class="previous button"><input type="button" value="Previous"></li>-->
+
+                      </ul>
+                      <!--<a class="btn-get next button" href="#">GET</a>-->
+
                     </div>
                   </div>
-                  <div class="right-area">
-                    <a class="btn-get disabled">GET</a>
-                    <strong class="payment">Monthly Payment $ </strong>
-                    <%= f.input :monthly_amount,disabled: true,label: false,input_html: { class: "price coverage-amount" }  %>
-                    <!--<span class="price">$16.45</span>-->
+                </div>
+                </div>
+              <%= f.hidden_field :coverage_amount%>
+              <%= f.hidden_field :monthly_amount%>
+              <%= f.hidden_field :insurance_years%>
+            </div>
+
+            <div class="tab-pane" id="tab4" style="background-color: #ffffff;">
+              <%= f.simple_fields_for :owner  do |owner|%>
+              <div id="main">
+                <header class="head"><h2>Tell us about yourself</h2></header>
+                <div class="form-block">
+                  <div class="userinfo-form bankinfo-form">
+                    <div class="container">
+                      <div class="hold-area">
+                        <h3>Policy Owner</h3>
+                        <div class="row">
+                          <%= owner.input :name ,label: false ,:placeholder=>"Owner Name"%>
+                          <!--<input type="text" placeholder="Your Name">-->
+                        </div>
+                        <div class="row">
+                          <%= owner.input :dob ,:as=> 'string',label: false ,input_html: { class: 'datepicker' },:placeholder=>"Date of Birth"%>
+                          <!--<input type="text" placeholder="Date of Birth">-->
+                        </div>
+                        <div class="row">
+                          <div class="col">
+                            <%= owner.input :snn ,label: false ,:placeholder=>"SNN"%>
+                            <!--<input type="text" placeholder="SNN">-->
+                          </div>
+                          <div class="col">
+                            <%= owner.input :adress ,label: false ,:placeholder=>"Address"%>
+                            <!--<input type="text" placeholder="Address">-->
+                          </div>
+                          <div class="col">
+                            <%= owner.input :lisence ,label: false ,:placeholder=>"Owner Drivers #"%>
+                            <!--<input type="text" placeholder="Owner Drivers #">-->
+                          </div>
+                          <div class="col">
+                            <%= owner.input :exp ,:as=> 'string',label: false ,input_html: { class: 'datepicker' },:placeholder=>"Exp"%>
+
+
+                            <!--<input type="text" placeholder="Exp">-->
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col">
+                            <%= owner.input :government ,label: false ,:placeholder=>"Government"%>
+                            <!--<input type="text" placeholder="Government">-->
+                          </div>
+                          <div class="col">
+                            <%= owner.input :job_title ,label: false ,:placeholder=>"Job Title"%>
+                            <!--<input type="text" placeholder="Job Title">-->
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col">
+                            <%= owner.input :salary ,label: false ,:placeholder=>"Salary"%>
+                            <!--<input type="text" placeholder="Salary">-->
+                          </div>
+                          <div class="col">
+
+                            <%= owner.input :date_of_hire ,:as=> 'string',label: false ,input_html: { class: 'datepicker' },:placeholder=>"Date of Hire"%>
+
+                            <!--<input type="text" placeholder="Date of Hire">-->
+                          </div>
+                        </div>
+                        <div id="beneficiaries">
+                          <%= owner.simple_fields_for :beneficiaries do |ben| %>
+                          <%= render 'beneficiary_fields', f: ben %>
+                          <div class="row add">
+                            <div class="btn-plus">
+                              <img src="<%=image_url('btn-plus.png')%>" alt="image description">
+                            </div>
+
+                            <div class="links hidden">
+                             <%= link_to_add_association "add more", owner, :beneficiaries ,id:"addmore"%>
+                            </div>
+                          </div>
+                        <div class="row add">
+                          <input type="submit" value="Done">
+                        </div>
+                      </div>
+                          <%end%>
+
+                    </div>
                   </div>
                 </div>
               </div>
+              <%end%>
+
             </div>
-            <!--<div style="background:#0d334e; height:100px; overflow:hidden;"></div>-->
+
+
+
+          </div>
 
 
           </div>
@@ -142,8 +240,6 @@
       </div>
 
     </div>
-    </div>
-
 
 
 
@@ -189,5 +285,44 @@
 
 
 });
+
+</script>
+
+<script>
+
+    jQuery(document).ready(function($){
+
+
+        $('#request').on('click', function(){
+
+            var age = $("#legacy_age").val();
+            var relationship = $("#legacy_relationship_status").val();
+            var gender = $("#legacy_gender").val();
+            var coverage = $("#amount").val();
+            //alert(gender);
+            var smoker = "true";
+            if ($("#smoker").is(':checked'))
+                smoker = "false";
+//            alert(age +" --"+relationship+"--"+gender +"--"+smoker);
+            var data = { 'age': age, 'relationship_status': relationship, 'smoker': smoker ,'gender': gender ,'coverage': coverage};
+            $.ajax({
+                type: "POST",
+                url: '/calculate_amount',
+                data: data,
+                /**
+                 * Response from your controller
+                 */
+                success: function(response) {
+//                    $("#age").val(age);
+
+                }
+
+            });
+
+            return false; // prevents normal behaviour
+        });
+    });
+
+
 
 </script>

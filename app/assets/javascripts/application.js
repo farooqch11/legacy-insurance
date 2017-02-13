@@ -13,7 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require bootstrap
+//= //require bootstrap
 //= require jcf.js
 //= require jcf.checkbox
 //= require jcf.select
@@ -22,6 +22,8 @@
 //= require prettify
 //= require jqueryui
 //= require wow
+//= require bootstrap-datepicker.min
+//= require cocoon
 
 
 
@@ -41,8 +43,12 @@ wow = new WOW(
     }
 );
 wow.init();
-document.getElementById('moar').onclick = function() {
-    var section = document.createElement('section');
-    section.className = 'section--purple wow fadeInUp';
-    this.parentNode.insertBefore(section, this);
-};
+$(document).on("page:load ready", function(){
+    $( ".datepicker" ).datepicker();
+
+})
+//document.getElementById('moar').onclick = function() {
+//    var section = document.createElement('section');
+//    section.className = 'section--purple wow fadeInUp';
+//    this.parentNode.insertBefore(section, this);
+//};
