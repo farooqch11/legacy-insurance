@@ -6,7 +6,7 @@ class LegaciesController < ApplicationController
   # GET /legacies
   # GET /legacies.json
   def index
-    @legacies = Legacy.all
+    @legacies = current_user.legacies
   end
 
   # GET /legacies/1
@@ -28,12 +28,12 @@ class LegaciesController < ApplicationController
   # POST /legacies
   # POST /legacies.json
   def create
-    @legacy = Legacy.new(legacy_params)
+    @legacy = current_user.legacies.new(legacy_params)
 
     respond_to do |format|
       if @legacy.save
-        format.html { redirect_to @legacy, notice: 'Legacy was successfully created.' }
-        format.json { render :show, status: :created, location: @legacy }
+        format.html { redirect_to legacies_path, notice: 'Legacy was successfully created.' }
+        format.json { render :index, status: :created, location: @legacy }
       else
         format.html { render :new }
         format.json { render json: @legacy.errors, status: :unprocessable_entity }
@@ -169,6 +169,6 @@ class LegaciesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def legacy_params
-      params.require(:legacy).permit(:age,:gender, :relationship_status, :smoker, :coverage_amount, :insurance_years, :user_id,owner_attributes: [:id, :name, :dob,:snn,:adress,:lisence,:exp,:government,:job_title,:salary,:date_of_hire,:legacy_id,:_destroy,beneficiaries_attributes: [:id, :name,:dob,:relation,:owner_id,:_destroy]])
+      params.require(:legacy).permit(:age,:gender, :relationship_status, :smoker, :coverage_amount, :insurance_years,:monthly_amount,owner_attributes: [:id, :name, :dob,:snn,:adress,:lisence,:exp,:government,:job_title,:salary,:date_of_hire,:legacy_id,:_destroy,beneficiaries_attributes: [:id, :name,:dob,:relation,:owner_id,:_destroy]])
     end
 end

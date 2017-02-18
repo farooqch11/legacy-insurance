@@ -102,19 +102,19 @@
                     <div class="block1">
                       <div class="coveragebox">
                         <span>Coverage amount</span>
-                        <a href="#" class="amount-btn">$ 100,000</a>
+                        <div href="#" class="amount-btn">$ 100,000</div>
 
                       </div>
 
                       <div class="coveragebox">
                         <span>Coverage amount</span>
-                        <a href="#" class="amount-btn">$ 100,000</a>
+                        <div href="#" class="amount-btn">$ 100,000</div>
 
                       </div>
 
                       <div class="coveragebox">
                         <span>Coverage amount</span>
-                        <a href="#" class="amount-btn">$ 100,000</a>
+                        <div href="#" class="amount-btn">$ 100,000</div>
 
                       </div>
 
@@ -202,12 +202,12 @@
                           <%= owner.simple_fields_for :beneficiaries do |ben| %>
                           <%= render 'beneficiary_fields', f: ben %>
                           <div class="row add">
-                            <div class="btn-plus">
-                              <img src="<%=image_url('btn-plus.png')%>" alt="image description">
-                            </div>
+                            <!--<div class="btn-plus">-->
+                             <!-- -->
+                            <!--</div>-->
 
-                            <div class="links hidden">
-                             <%= link_to_add_association "add more", owner, :beneficiaries ,id:"addmore"%>
+                            <div class="links">
+                             <%= link_to_add_association image_tag('btn-plus.png'), owner, :beneficiaries ,id:"addmore"%>
                             </div>
                           </div>
                         <div class="row add">

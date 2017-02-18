@@ -38,13 +38,14 @@
           <strong class="feature-title">My Legacy</strong>
           <span class="feature-option"><a href="#" class="simple"><%= link_to 'Edit', edit_legacy_path(legacy) %></a> | <a href="#" class="red-option"><%= link_to 'Destroy', legacy, method: :delete, data: { confirm: 'Are you sure?' } %></a></span></div>
     <%end%>
-    <div class="user-box-2">
-      <div class="user-box-new">
+    <%=link_to new_legacy_path do %>
+        <div class="user-box-2">
+          <div class="user-box-new">
 
-
-      </div>
-      <strong class="feature-title">Create New</strong>
-    </div>
+          </div>
+          <strong class="feature-title">Create</strong>
+        </div>
+    <%end%>
 
 
     <div class="clearfix"></div>
